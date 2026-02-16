@@ -1,0 +1,2968 @@
+[
+    {
+        "name": "Network Automation Foundation",
+        "questions": [
+            {
+                "text": "What is the primary purpose of the YANG data modeling language in network automation?",
+                "options": [
+                    "A) To transport data between devices",
+                    "B) To define the structure and constraints of configuration and state data",
+                    "C) To encrypt network traffic",
+                    "D) To execute Python scripts on routers"
+                ],
+                "correctAnswer": "B",
+                "explanation": "YANG (Yet Another Next Generation) is a data modeling language defined in RFC 6020. Its primary purpose is to model configuration and state data used by network configuration protocols like NETCONF and RESTCONF, ensuring data is structured and valid.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which industry standard organization publishes YANG models that are vendor-neutral and focused on routing and device management?",
+                "options": [
+                    "A) Cisco",
+                    "B) OpenConfig",
+                    "C) IETF",
+                    "D) IEEE"
+                ],
+                "correctAnswer": "C",
+                "explanation": "The IETF (Internet Engineering Task Force) publishes standard YANG models (e.g., ietf-interfaces, ietf-routing) that are vendor-neutral. While OpenConfig also publishes models, it is a working group of operators, not a formal standards body like IETF or IEEE.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "OpenConfig YANG models are primarily driven by which group of organizations?",
+                "options": [
+                    "A) Network equipment manufacturers",
+                    "B) Major internet service providers and web-scale companies",
+                    "C) Academic institutions",
+                    "D) Government regulatory bodies"
+                ],
+                "correctAnswer": "B",
+                "explanation": "OpenConfig is a collaborative effort led by network operators (such as Google, Microsoft, Comcast) to create vendor-neutral data models for configuring and managing networks, addressing the limitations of vendor-specific models.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "In a YANG model, what node type is used to define a node that can exist multiple times, like a list of interfaces?",
+                "options": [
+                    "A) container",
+                    "B) leaf",
+                    "C) list",
+                    "D) leaflist"
+                ],
+                "correctAnswer": "C",
+                "explanation": "A 'list' node in YANG defines a collection of list entries, where each entry is identified by one or more key leafs. This is used for repeating data structures like interfaces, BGP neighbors, or ACL entries.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which command-line tool is commonly used to validate YANG modules and convert them into other formats like Tree, Yin, or DDSL?",
+                "options": [
+                    "A) yang-explorer",
+                    "B) pyang",
+                    "C) ncclient",
+                    "D) postman"
+                ],
+                "correctAnswer": "B",
+                "explanation": "pyang is the standard open-source tool for validating YANG modules and converting them into various formats (yin, yang, tree, hybrid, etc.). It helps developers ensure their models are syntactically correct.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What is the default TCP port used by NETCONF?",
+                "options": [
+                    "A) 22",
+                    "B) 443",
+                    "C) 830",
+                    "D) 8080"
+                ],
+                "correctAnswer": "C",
+                "explanation": "NETCONF over SSH typically uses TCP port 830 (netconf-ssh). While it can run over port 22 (standard SSH), port 830 is the IANA-assigned default port for the NETCONF subsystem.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which transport protocol does default NETCONF usage rely upon for security?",
+                "options": [
+                    "A) TLS",
+                    "B) SSH",
+                    "C) UDP",
+                    "D) SNMP"
+                ],
+                "correctAnswer": "B",
+                "explanation": "NETCONF provides a secure transport by layering over SSH (Secure Shell) as defined in RFC 6242. This ensures authentication, data integrity, and confidentiality.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "In NETCONF, which operation is used to retrieve all or part of a specified configuration?",
+                "options": [
+                    "A) <get>",
+                    "B) <get-config>",
+                    "C) <copy-config>",
+                    "D) <read-config>"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The <get-config> operation is used to retrieve configuration data from a specific datastore (like running, candidate, or startup). <get> is used to retrieve both configuration AND state data.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "RESTCONF supports which two data encoding formats?",
+                "options": [
+                    "A) JSON and YAML",
+                    "B) XML and JSON",
+                    "C) XML and YAML",
+                    "D) JSON and Protobuf"
+                ],
+                "correctAnswer": "B",
+                "explanation": "RESTCONF (RFC 8040) supports two encodings for the data payload: XML (application/yang-data+xml) and JSON (application/yang-data+json).",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which HTTP verb is used in RESTCONF to create a new data resource or invoke an operation?",
+                "options": [
+                    "A) GET",
+                    "B) PUT",
+                    "C) POST",
+                    "D) PATCH"
+                ],
+                "correctAnswer": "C",
+                "explanation": "POST is used to create a new child resource (e.g., adding a new interface to a list) or to invoke an RPC operation. PUT is typically used to replace or create a specific resource if the URI is known.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "The 'native' YANG models in Cisco IOS XE devices represent:",
+                "options": [
+                    "A) Industry-standard models compatible with Juniper",
+                    "B) Models that map 1-to-1 with Cisco IOS CLI features",
+                    "C) Simplified models for beginners",
+                    "D) Deprecated models"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Cisco Native YANG models are vendor-specific models designed to cover the full feature set of the device. They generally map directly to the device's CLI commands structure.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "In a YANG tree diagram (RFC 8340), what does the 'rw' flag indicate?",
+                "options": [
+                    "A) Read-write (configuration data)",
+                    "B) Read-only (state data)",
+                    "C) Remote-write",
+                    "D) Real-world"
+                ],
+                "correctAnswer": "A",
+                "explanation": "In tree diagrams, 'rw' stands for read-write, indicating the node is configuration data that can be modified. 'ro' stands for read-only, indicating state data.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which NETCONF datastore represents the configuration that is currently active on the device?",
+                "options": [
+                    "A) <candidate>",
+                    "B) <startup>",
+                    "C) <running>",
+                    "D) <persistent>"
+                ],
+                "correctAnswer": "C",
+                "explanation": "The <running> datastore holds the complete configuration that is currently active on the network device. Modifications to <running> take effect immediately.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "When using RESTCONF, the URI '/data' acts as the entry point for which type of data?",
+                "options": [
+                    "A) Configuration and State data",
+                    "B) RPC operations",
+                    "C) Event streams",
+                    "D) Schema definitions"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The '/data' resource in RESTCONF is the root for all configuration and operational state data defined by the YANG modules supported by the server.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which YANG statement defines a node that contains a set of child nodes but has no value itself?",
+                "options": [
+                    "A) leaf",
+                    "B) leaf-list",
+                    "C) container",
+                    "D) typedef"
+                ],
+                "correctAnswer": "C",
+                "explanation": "A 'container' node is used to group related nodes in a subtree. It has no value of its own, only child nodes.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What is 'YANG Suite'?",
+                "options": [
+                    "A) A text editor for Python",
+                    "B) A Cisco tool for visualizing, testing, and generating payloads from YANG models",
+                    "C) A database for storing configurations",
+                    "D) A protocol for transferring files"
+                ],
+                "correctAnswer": "B",
+                "explanation": "YANG Suite is a Cisco-developed tool that allows users to download YANG models, visualize them, generate NETCONF/RESTCONF payloads, and interact with devices to test operations.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which character represents a list node in a pyang tree output?",
+                "options": [
+                    "A) +-- rw",
+                    "B) +-- ro",
+                    "C) +-- :",
+                    "D) +-- *"
+                ],
+                "correctAnswer": "D",
+                "explanation": "In the tree format, a list node is denoted by an asterisk (*) following the node name, indicating it can exist multiple times (0..n).",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "If a YANG leaf is defined with type 'boolean', what are the valid values in an XML payload?",
+                "options": [
+                    "A) 1 and 0",
+                    "B) true and false",
+                    "C) yes and no",
+                    "D) on and off"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The YANG 'boolean' type allows only two values: 'true' and 'false'. These are used in both XML and JSON encodings.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "In a JSON payload for a YANG 'list', the data is represented as:",
+                "options": [
+                    "A) A JSON object {}",
+                    "B) A JSON array []",
+                    "C) A comma-separated string",
+                    "D) A nested dictionary"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A YANG list maps to a JSON array []. Each entry in the list is a JSON object within that array.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which RESTCONF resource allows you to discover the YANG modules supported by the server?",
+                "options": [
+                    "A) /restconf/data",
+                    "B) /restconf/operations",
+                    "C) /restconf/yang-library-version",
+                    "D) /.well-known/host-meta"
+                ],
+                "correctAnswer": "C",
+                "explanation": "While '/.well-known/host-meta' is used for discovery of the root, the specific YANG library information (modules, revisions) is typically found under '/restconf/data/ietf-yang-library:modules-state' or similar paths defined by RFC 7895.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "The <edit-config> operation in NETCONF supports which attribute to replace an entire configuration hierarchy?",
+                "options": [
+                    "A) operation=\"merge\"",
+                    "B) operation=\"replace\"",
+                    "C) operation=\"delete\"",
+                    "D) operation=\"create\"",
+                    "E) operation=\"remove\""
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'replace' operation replaces the existing configuration with the new configuration supplied. If the new configuration is empty, it effectively deletes the target.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which Python library is most commonly used to consume NETCONF APIs programmatically?",
+                "options": [
+                    "A) requests",
+                    "B) netmiko",
+                    "C) ncclient",
+                    "D) paramiko"
+                ],
+                "correctAnswer": "C",
+                "explanation": "ncclient (NETCONF Client) is the standard Python library for interacting with NETCONF servers.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "In a YANG model, what does the 'key' statement define for a list?",
+                "options": [
+                    "A) The encryption key for the list",
+                    "B) The leafs that uniquely identify a list entry",
+                    "C) The password to access the list",
+                    "D) The sort order of the list"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'key' statement lists the leaf nodes that serve as the unique identifier (primary key) for each entry in the list.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which HTTP method should be used in RESTCONF to DELETE a resource?",
+                "options": [
+                    "A) DELETE",
+                    "B) REMOVE",
+                    "C) POST with delete payload",
+                    "D) GET"
+                ],
+                "correctAnswer": "A",
+                "explanation": "RESTCONF maps the HTTP DELETE method directly to the deletion of a data resource.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What does the YANG 'grouping' statement do?",
+                "options": [
+                    "A) Groups devices together",
+                    "B) Defines a reusable block of nodes",
+                    "C) Creates a list of users",
+                    "D) Validates XML syntax"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'grouping' statement defines a reusable collection of nodes. It does not create any nodes in the schema tree itself until it is used via the 'uses' statement.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "To use a 'grouping' in YANG, which statement is used?",
+                "options": [
+                    "A) import",
+                    "B) include",
+                    "C) uses",
+                    "D) typedef"
+                ],
+                "correctAnswer": "C",
+                "explanation": "The 'uses' statement is used to reference and instantiate a previously defined 'grouping' into the current location in the schema tree.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which IETF RFC defines the RESTCONF protocol?",
+                "options": [
+                    "A) RFC 6241",
+                    "B) RFC 6020",
+                    "C) RFC 8040",
+                    "D) RFC 8340"
+                ],
+                "correctAnswer": "C",
+                "explanation": "RFC 8040 defines the RESTCONF protocol. RFC 6241 is NETCONF, RFC 6020 is YANG, and RFC 8340 is for Tree Diagrams.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What is the content-type header for a RESTCONF request sending JSON data?",
+                "options": [
+                    "A) application/json",
+                    "B) application/yang-data+json",
+                    "C) text/json",
+                    "D) application/restconf+json"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The correct media type for YANG-modeled data in JSON format is 'application/yang-data+json'.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "In a NETCONF <hello> message, what exchange must happen before any operations?",
+                "options": [
+                    "A) Keys exchange",
+                    "B) Capabilities exchange",
+                    "C) Password verification",
+                    "D) Token validation"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Both the client and server exchange <hello> messages to announce their capabilities (supported protocol versions, models, and features).",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which command in pyang generates a tree view of a module?",
+                "options": [
+                    "A) pyang --format tree module.yang",
+                    "B) pyang -f tree module.yang",
+                    "C) pyang view tree module.yang",
+                    "D) pyang --tree module.yang"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The '-f' (format) flag is used to specify the output format. 'pyang -f tree' generates the tree diagram.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What does a '?' indicate next to a node in a YANG tree diagram?",
+                "options": [
+                    "A) The node is deprecated",
+                    "B) The node is optional",
+                    "C) The node is a list",
+                    "D) The node is mandatory"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A question mark '?' indicates that the node is optional (it is not mandatory to configure it).",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which NETCONF operation is used to lock a datastore to prevent conflicting edits?",
+                "options": [
+                    "A) <lock>",
+                    "B) <secure>",
+                    "C) <freeze>",
+                    "D) <block>"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The <lock> operation allows a client to lock the configuration system of a device, preventing other clients from making changes until <unlock> is called.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What distinguishes OpenConfig models from IETF models?",
+                "options": [
+                    "A) OpenConfig strictly uses XML",
+                    "B) OpenConfig focuses on a unified, vendor-neutral structure for operations",
+                    "C) IETF models are only for Cisco devices",
+                    "D) OpenConfig does not support BGP"
+                ],
+                "correctAnswer": "B",
+                "explanation": "OpenConfig aims to provide a consistent, vendor-neutral data model for network management, focusing on operational needs and streaming telemetry, whereas IETF models are often more granular and can be fragmented.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which YANG data type would best represent an IPv4 address?",
+                "options": [
+                    "A) string",
+                    "B) inet:ipv4-address",
+                    "C) int32",
+                    "D) binary"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The ietf-inet-types module defines standard types such as 'ipv4-address' and 'ipv6-address' which enforce correct formatting.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "The <rpc-reply> element in NETCONF response contains <ok/> when:",
+                "options": [
+                    "A) The request was received but not processed",
+                    "B) The request was processed successfully with no data to return",
+                    "C) The device is online",
+                    "D) The syntax is correct but logic failed"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The <ok/> tag is returned in an <rpc-reply> to indicate success when the operation does not return any data (like <edit-config>).",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which HTTP status code typically indicates a successful GET request in RESTCONF?",
+                "options": [
+                    "A) 201 Created",
+                    "B) 200 OK",
+                    "C) 204 No Content",
+                    "D) 202 Accepted"
+                ],
+                "correctAnswer": "B",
+                "explanation": "200 OK is the standard response for a successful GET request returning data. 204 No Content might be returned if the data exists but is empty, though 200 is typical for 'found'.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "When using requests library for RESTCONF, what does 'verify=False' do?",
+                "options": [
+                    "A) Disables authentication",
+                    "B) Disables SSL certificate verification",
+                    "C) Disables JSON validation",
+                    "D) Disables logging"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Inside a lab/dev environment, devices often have self-signed certificates. 'verify=False' tells the requests library to ignore SSL certificate validation errors.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Conceptually, what is the 'datastore' in NETCONF architectures?",
+                "options": [
+                    "A) The hard drive of the router",
+                    "B) A conceptual storage of configuration information",
+                    "C) The RAM where packets are buffered",
+                    "D) The logging server"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A datastore is a conceptual set of configuration information (e.g., 'running', 'startup', 'candidate') that can be retrieved or manipulated.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which YANG statement constrains a leaf's value to a specific regex pattern?",
+                "options": [
+                    "A) range",
+                    "B) pattern",
+                    "C) length",
+                    "D) must"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'pattern' statement allows defining a regular expression that the value of the leaf must match.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What is the primary difference between a 'config true' and 'config false' node in YANG?",
+                "options": [
+                    "A) 'config true' is optional, 'config false' is mandatory",
+                    "B) 'config true' is configuration data, 'config false' is state (operational) data",
+                    "C) 'config true' is for routers, 'config false' is for switches",
+                    "D) 'config true' uses JSON, 'config false' uses XML"
+                ],
+                "correctAnswer": "B",
+                "explanation": "In YANG, 'config' is true by default, representing editable configuration. 'config false' designates read-only state data (counters, status, neighbors).",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "If you need to retrieve operational data for OSPF via NETCONF, which filter type is most appropriate?",
+                "options": [
+                    "A) Subtree filtering",
+                    "B) Regex filtering",
+                    "C) SQL filtering",
+                    "D) BGP filtering"
+                ],
+                "correctAnswer": "A",
+                "explanation": "NETCONF supports 'Subtree filtering' (selecting nodes based on XML hierarchy) and 'XPath filtering' (more powerful). Regex is not a standard NETCONF filter type.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "How is a 'presence container' different from a normal container in YANG?",
+                "options": [
+                    "A) It cannot contain lists",
+                    "B) Its existence carries meaning (e.g., enabling a feature)",
+                    "C) It is always read-only",
+                    "D) It is invisible in the tree"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A presence container is defined with the 'presence' statement. Its creation (even if empty) conveys semantic meaning, like enabling a protocol (e.g., 'router ospf').",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which part of the URL 'https://ios-xe-mgmt/restconf/data/ietf-interfaces:interfaces' represents the YANG module?",
+                "options": [
+                    "A) restconf",
+                    "B) data",
+                    "C) ietf-interfaces",
+                    "D) interfaces"
+                ],
+                "correctAnswer": "C",
+                "explanation": "In the RESTCONF URI structure, the module name is often used as a prefix to the container name to resolve ambiguity. Here 'ietf-interfaces' is the module.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "When constructing a payload to configure an interface IP, which namespace must be included?",
+                "options": [
+                    "A) The namespace of the XML schema",
+                    "B) The namespace defined in the corresponding YANG module",
+                    "C) The namespace of the Python script",
+                    "D) No namespace is required for JSON"
+                ],
+                "correctAnswer": "B",
+                "explanation": "In XML payloads, the XML namespace (xmlns attribute) corresponding to the YANG module must be provided so the server knows which model the data belongs to.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What is the equivalent of the NETCONF <candidate> datastore in a device that doesn't support it?",
+                "options": [
+                    "A) <startup>",
+                    "B) <running>",
+                    "C) It is not supported, changes are applied directly to <running>",
+                    "D) <mirror>"
+                ],
+                "correctAnswer": "C",
+                "explanation": "If <candidate> is not supported, the device typically writable-running capability, meaning <edit-config> targets <running> directly.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which XML element wraps the payload in a NETCONF <edit-config> request?",
+                "options": [
+                    "A) <data>",
+                    "B) <config>",
+                    "C) <payload>",
+                    "D) <content>"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The <config> element contains the hierarchy of data to be modified within the <edit-config> operation.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "In YANG, what type matches a reference to an existing leaf?",
+                "options": [
+                    "A) leafref",
+                    "B) pointer",
+                    "C) link",
+                    "D) alias"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The 'leafref' type is used to reference a value of another leaf in the data tree, effectively functioning like a foreign key.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Which tool can generate Python bindings from YANG models?",
+                "options": [
+                    "A) PyMIA",
+                    "B) YDK (YANG Development Kit)",
+                    "C) YANG-Creator",
+                    "D) Net-To-Py"
+                ],
+                "correctAnswer": "B",
+                "explanation": "YDK (YANG Development Kit) is a tool that generates an API (in Python, C++, Go) from YANG models, allowing developers to interact with the model as if it were a class structure.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "What ensures the integrity of a message in NETCONF?",
+                "options": [
+                    "A) MD5 checksums",
+                    "B) The underlying secure transport (SSH/TLS)",
+                    "C) Parity bits",
+                    "D) Cyclic redundancy checks"
+                ],
+                "correctAnswer": "B",
+                "explanation": "NETCONF relies on the underlying transport protocol (like SSH or TLS) to provide integrity, confidentiality, and authentication.",
+                "section": "Network Automation Foundation"
+            },
+            {
+                "text": "Why might you use YANG Suite over raw manual payload construction?",
+                "options": [
+                    "A) It is faster to type",
+                    "B) It visually explores the YANG tree and auto-generates valid RPCs",
+                    "C) It connects to the device console",
+                    "D) It supports only binary data"
+                ],
+                "correctAnswer": "B",
+                "explanation": "YANG Suite simplifies the complex task of understanding large YANG models and constructing valid XML/JSON payloads manually.",
+                "section": "Network Automation Foundation"
+            }
+        ]
+    },
+    {
+        "name": "Device-Level Network Automation",
+        "questions": [
+            {
+                "text": "Which git command is used to combine changes from a specific branch into the current branch?",
+                "options": [
+                    "A) git add",
+                    "B) git merge",
+                    "C) git push",
+                    "D) git commit"
+                ],
+                "correctAnswer": "B",
+                "explanation": "'git merge' is the command used to integrate changes from another branch (e.g., a feature branch) into the current active branch.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is the primary benefit of using a Python virtual environment (venv)?",
+                "options": [
+                    "A) It increases script execution speed",
+                    "B) It isolates dependencies and libraries for specific projects",
+                    "C) It encrypts the Python code",
+                    "D) It allows Python to run on networking devices"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A virtual environment (venv) creates an isolated directory tree for a project. This ensures that dependencies (libraries, versions) for one project do not conflict with those of another project or the system-wide Python installation.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In a Python script using Netmiko, which function is used to establish a connection to a device?",
+                "options": [
+                    "A) Netmiko()",
+                    "B) ConnectHandler()",
+                    "C) SSHClient()",
+                    "D) DeviceConnect()"
+                ],
+                "correctAnswer": "B",
+                "explanation": "ConnectHandler is the primary factory function in Netmiko used to return a connection object based on the device_type specified.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Netmiko method should be used to send a configuration command that requires entering configuration mode?",
+                "options": [
+                    "A) send_command()",
+                    "B) send_config_set()",
+                    "C) send_config_command()",
+                    "D) enable()"
+                ],
+                "correctAnswer": "B",
+                "explanation": "send_config_set() takes a list of configuration commands (or a single command) and automatically handles entering and exiting configuration mode (e.g., 'conf t' and 'end').",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "When using ncclient, which manager method is used to retrieve the running configuration?",
+                "options": [
+                    "A) get_running_config()",
+                    "B) get_config(source='running')",
+                    "C) fetch_config()",
+                    "D) pull_config()"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The get_config() method is used to retrieve all or part of a specified configuration. The 'source' argument specifies the datastore, such as 'running'.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is the format of an Ansible Inventory file?",
+                "options": [
+                    "A) Only JSON",
+                    "B) Only YAML",
+                    "C) INI or YAML",
+                    "D) XML"
+                ],
+                "correctAnswer": "C",
+                "explanation": "Ansible supports inventory files in both INI format (simple text files) and YAML format. While you can use dynamic inventory scripts (which output JSON), the static file format is typically INI or YAML.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In Ansible, which module is generic for sending commands to Cisco IOS devices?",
+                "options": [
+                    "A) cisco_cmd",
+                    "B) ios_command",
+                    "C) net_command",
+                    "D) ssh_command"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'ios_command' module is part of the Cisco IOS collection and is used to send operational mode commands (like 'show run') to the device and return the output.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which variation of Python is used for on-box scripting within the Cisco IOS XE Guest Shell?",
+                "options": [
+                    "A) Jython",
+                    "B) Standard CPython (usually Python 3)",
+                    "C) MicroPython",
+                    "D) IronPython"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The Guest Shell differs from EEM Tcl policies. Guest Shell is a Linux container (LXC) running CentOS (or similar) which includes a standard CPython interpreter (usually Python 3.x), allowing full Python capabilities.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is Key-Value Pair in the context of a REST API header?",
+                "options": [
+                    "A) A method to encrypt the body",
+                    "B) Metadata such as 'Content-Type: application/yang-data+json'",
+                    "C) The username and password in the URL",
+                    "D) The IP address and port"
+                ],
+                "correctAnswer": "B",
+                "explanation": "HTTP headers are defined as key-value pairs (e.g., Key: 'Content-Type', Value: 'application/json'). They provide metadata about the request or response.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Cisco IOS XE technology allows the device to automatically provision itself upon booting by contacting a server?",
+                "options": [
+                    "A) EEM",
+                    "B) ZTP (Zero Touch Provisioning) / PnP",
+                    "C) NETCONF",
+                    "D) Ansible"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Zero Touch Provisioning (ZTP) or Network Plug and Play (PnP) allows a device to automatically discover a controller or server (via DHCP options or Cloud redirect) without manual console intervention to download its initial configuration and image.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "When using requests library in Python, how do you handle Basic Authentication?",
+                "options": [
+                    "A) auth=('user', 'pass')",
+                    "B) login='user:pass'",
+                    "C) headers={'Auth': 'user'}",
+                    "D) you cannot use Basic Auth"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The requests library simplifies Basic Auth by allowing you to pass a tuple `auth=('username', 'password')` directly to the request call.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which ncclient method is used to modify the configuration of a device?",
+                "options": [
+                    "A) set_config()",
+                    "B) edit_config()",
+                    "C) push_config()",
+                    "D) commit_changes()"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The edit_config() method maps to the NETCONF <edit-config> operation, which is used to create, delete, merge, or replace configuration data.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In Netmiko, what is the default device_type for a standard Cisco IOS router?",
+                "options": [
+                    "A) cisco_ios",
+                    "B) cisco_xe",
+                    "C) ios_xr",
+                    "D) cisco_nxos"
+                ],
+                "correctAnswer": "A",
+                "explanation": "For standard Cisco IOS (and often IOS XE, though 'cisco_xe' is preferred for specific features), 'cisco_ios' is the classic device_type. 'cisco_xe' often aliases or inherits from it but 'cisco_ios' is the base type.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is an Ansible 'Playbook'?",
+                "options": [
+                    "A) A directory of log files",
+                    "B) A YAML file defining a series of tasks to run on hosts",
+                    "C) A Python script for Netmiko",
+                    "D) A user manual"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Ansible Playbooks are YAML files that define the state of your infrastructure. They contain 'plays', which map 'hosts' to 'tasks'.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which command is used to run an Ansible Playbook?",
+                "options": [
+                    "A) ansible-run playbook.yaml",
+                    "B) ansible-playbook playbook.yaml",
+                    "C) python playbook.yaml",
+                    "D) run-playbook playbook.yaml"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'ansible-playbook' command is the core executable used to run playbooks.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "To filter the output of `send_command()` in Netmiko, you can use:",
+                "options": [
+                    "A) use_textfsm=True",
+                    "B) parse=True",
+                    "C) filter='xml'",
+                    "D) format='json'"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Setting 'use_textfsm=True' tells Netmiko to look for a corresponding TextFSM template (using the ntc-templates collection) to parse the raw CLI output into structured data (list of dictionaries).",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which XML tag is used to specify the namespace in a NETCONF filter?",
+                "options": [
+                    "A) xmlns",
+                    "B) namecheck",
+                    "C) id",
+                    "D) source"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The 'xmlns' (XML Namespace) attribute is used to uniquely identify the YANG module schema that defines the data elements being filtered.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is the purpose of 'Embedded Event Manager' (EEM) on Cisco devices?",
+                "options": [
+                    "A) To manage external events like conferences",
+                    "B) To automate tasks on the device in response to specific system events",
+                    "C) To power off the device at night",
+                    "D) To manage VRF route leaking"
+                ],
+                "correctAnswer": "B",
+                "explanation": "EEM creates a layer of intelligence on the device, allowing it to take automated actions (scripts, CLI commands, SNMP traps) based on detected system events (Syslog, CLI input, Timers, etc.).",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Netmiko method returns the prompt of the router?",
+                "options": [
+                    "A) find_prompt()",
+                    "B) get_prompt()",
+                    "C) show_prompt()",
+                    "D) read_prompt()"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The find_prompt() method returns the current router prompt. This is useful for verifying the connection state or privilege level.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In Ansible, variables defined in 'group_vars' apply to:",
+                "options": [
+                    "A) All hosts in a specific group",
+                    "B) Only the localhost",
+                    "C) Only hosts with a specific IP",
+                    "D) No hosts"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Ansible uses 'group_vars' directories to store variables that are applied to all hosts belonging to a specific inventory group.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which HTTP header is mandatory for RESTCONF PUT/POST requests to specify input format?",
+                "options": [
+                    "A) Content-Type",
+                    "B) Accept",
+                    "C) User-Agent",
+                    "D) Host"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The Content-Type header tells the server what format the data in the body is (e.g., application/yang-data+json). The 'Accept' header tells the server what format you want the response to be in.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What does the 'connection: network_cli' setting in Ansible do?",
+                "options": [
+                    "A) It uses a local Python script to SSH into the device",
+                    "B) It tells Ansible to execute modules locally but communicate via CLI over SSH",
+                    "C) It installs Python on the remote router",
+                    "D) It uses Telnet only"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Unlike standard Ansible (which copies Python modules to the remote host), 'network_cli' runs the logic on the control node and sends CLI commands over an SSH session to the network device.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "When using `ncclient`, what exception is raised if authentication fails?",
+                "options": [
+                    "A) SSHException",
+                    "B) AuthenticationError",
+                    "C) NetconfAuthenticationError",
+                    "D) LoginError"
+                ],
+                "correctAnswer": "A",
+                "explanation": "ncclient relies on paramiko for SSH. If authentication fails, paramiko typically raises an SSHException (or AuthenticationException subclass). ncclient wraps these, but SSHException is the underlying cause often caught.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Git state indicates files are modified but not yet staged?",
+                "options": [
+                    "A) Staged",
+                    "B) Committed",
+                    "C) Untracked / Modified",
+                    "D) Pushed"
+                ],
+                "correctAnswer": "C",
+                "explanation": "Files that have been changed but not yet added to the staging area (via `git add`) are in the 'Modified' state. New files not yet added are 'Untracked'.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is the role of the 'guest shell' on IOS XE?",
+                "options": [
+                    "A) A secure container running Linux (CentOS/Yocto) for running scripts and apps",
+                    "B) A limited CLI user mode",
+                    "C) A web browser interface",
+                    "D) A VM for Windows"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Guest Shell is a virtualized Linux environment (LXC container) running on the control plane of the IOS XE device, allowing users to run Linux applications, Python scripts, and automation tools directly on the box.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Ansible module is used to ensure a specific configuration line exists on an IOS device?",
+                "options": [
+                    "A) ios_config",
+                    "B) ios_check",
+                    "C) ios_line",
+                    "D) ios_exists"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The 'ios_config' module is versatile and idempotent. It can be used to ensure specific configuration lines or blocks exist on the device.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In a Python script, what does `response.status_code == 204` typically mean for a REST API?",
+                "options": [
+                    "A) Created",
+                    "B) No Content (Success)",
+                    "C) Bad Request",
+                    "D) Unauthorized"
+                ],
+                "correctAnswer": "B",
+                "explanation": "HTTP 204 means 'No Content'. It indicates the request was processed successfully (e.g., an update or delete), but the server is not returning any content in the body.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is the difference between `git fetch` and `git pull`?",
+                "options": [
+                    "A) They are identical",
+                    "B) `git pull` downloads changes; `git fetch` applies them",
+                    "C) `git fetch` downloads changes but does not merge; `git pull` downloads and merges",
+                    "D) `git fetch` deletes files"
+                ],
+                "correctAnswer": "C",
+                "explanation": "`git fetch` updates your remote-tracking branches with the latest changes from the remote, but leaves your local work alone. `git pull` does a fetch followed immediately by a `git merge` into your current branch.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which NETCONF capability must a device advertise to support the `<validate>` operation?",
+                "options": [
+                    "A) urn:ietf:params:netconf:capability:validate:1.1",
+                    "B) urn:ietf:params:netconf:capability:check:1.0",
+                    "C) urn:cisco:validate",
+                    "D) It is supported by default"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The <validate> operation (used to check if a configuration is valid) is an optional capability. The device must advertise the 'validate' capability URI in its hello message.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "When Day 0 Provisioning via Network Plug and Play (PnP), how does the device discover the PnP server?",
+                "options": [
+                    "A) DHCP Option 43, DNS, or Cloud Redirect",
+                    "B) It guesses the IP",
+                    "C) It requires a console cable",
+                    "D) Using CDP only"
+                ],
+                "correctAnswer": "A",
+                "explanation": "PnP discovery mechanisms include DHCP Option 43 (providing the controller IP/hostname), DNS lookup (pnpserver.local), or contacting the Cisco cloud redirect service.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In Ansible, what is a 'Task'?",
+                "options": [
+                    "A) A single action to be performed (e.g., install a package, configure an interface)",
+                    "B) The entire script",
+                    "C) The list of servers",
+                    "D) The result of the run"
+                ],
+                "correctAnswer": "A",
+                "explanation": "A task is the smallest unit of action in Ansible. It calls a specific module with specific arguments to perform an action on the managed host.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which parameter in `ncclient` `manager.connect` ignores unknown host keys?",
+                "options": [
+                    "A) hostkey_verify=False",
+                    "B) secure=False",
+                    "C) ignore_keys=True",
+                    "D) trust_all=True"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Setting 'hostkey_verify=False' prevents the client from raising an error when connecting to a host whose SSH key is not in the known_hosts file.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which data type in Python is an ordered, immutable sequence?",
+                "options": [
+                    "A) List",
+                    "B) Dictionary",
+                    "C) Tuple",
+                    "D) Set"
+                ],
+                "correctAnswer": "C",
+                "explanation": "A tuple (e.g., `my_tuple = (1, 2, 3)`) is ordered and immutable (cannot be changed after creation). Lists are mutable.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What does API stand for?",
+                "options": [
+                    "A) Application Programming Interface",
+                    "B) Automated Protocol Integration",
+                    "C) Apple Python Interface",
+                    "D) Advanced Ping Instrument"
+                ],
+                "correctAnswer": "A",
+                "explanation": "API stands for Application Programming Interface. It defines the methods and data formats that applications can use to communicate with each other.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In Netmiko, how do you handle a command that asks for confirmation (e.g., 'Do you want to proceed? [y/n]')?",
+                "options": [
+                    "A) It handles it automatically",
+                    "B) Use the `expect_string` argument",
+                    "C) Use `auto_confirm=True`",
+                    "D) You cannot handle it"
+                ],
+                "correctAnswer": "B",
+                "explanation": "You can use `send_command(cmd, expect_string=r'proceed')` to tell Netmiko to wait until it sees the prompt, then send a newline (or another command) to confirm.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Python library handles JSON serialization and deserialization?",
+                "options": [
+                    "A) json",
+                    "B) pyjson",
+                    "C) xmltodict",
+                    "D) yaml"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The standard 'json' library in Python provides `json.dumps()` (serialize to string) and `json.loads()` (deserialize from string) methods.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is the purpose of 'Jinja2' in Ansible?",
+                "options": [
+                    "A) It is the database engine",
+                    "B) It is the templating language used for dynamic configuration generation",
+                    "C) It is the encryption method",
+                    "D) It is the connection plugin"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Jinja2 is a modern and designer-friendly templating language for Python provided by Ansible. It allows for looping, conditionals, and variable substitution when generating config files.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "How do you install the 'requests' library in a Python virtual environment?",
+                "options": [
+                    "A) pip install requests",
+                    "B) apt-get install python3-requests",
+                    "C) python install requests",
+                    "D) npm install requests"
+                ],
+                "correctAnswer": "A",
+                "explanation": "'pip' is the package installer for Python. Running `pip install requests` installs the library from PyPI into the active environment.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which EEM Applet command matches a Syslog pattern?",
+                "options": [
+                    "A) event syslog pattern \"PATTERN\"",
+                    "B) event log match \"PATTERN\"",
+                    "C) trigger syslog \"PATTERN\"",
+                    "D) watch syslog \"PATTERN\""
+                ],
+                "correctAnswer": "A",
+                "explanation": "The 'event syslog pattern' command configures the EEM applet to trigger when a syslog message matching the specified regex pattern is generated.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In a REST API, what does the ETag header represent?",
+                "options": [
+                    "A) Error Tag",
+                    "B) Entity Tag (version identifier for the resource)",
+                    "C) Email Tag",
+                    "D) Encryption Tag"
+                ],
+                "correctAnswer": "B",
+                "explanation": "An ETag (Entity Tag) is an identifier for a specific version of a resource. It allows caches to be more efficient and saves bandwidth, as a web server does not need to send a full response if the content has not changed.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "What is the default return type of `send_command` in Netmiko?",
+                "options": [
+                    "A) List",
+                    "B) Dictionary",
+                    "C) String",
+                    "D) Integer"
+                ],
+                "correctAnswer": "C",
+                "explanation": "The `send_command` method returns the output from the device as a single string.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Ansible keyword defines the list of managed nodes?",
+                "options": [
+                    "A) nodes",
+                    "B) targets",
+                    "C) hosts",
+                    "D) devices"
+                ],
+                "correctAnswer": "C",
+                "explanation": "The 'hosts' keyword in a playbook play defines which group of hosts (from the inventory) the tasks should be executed against.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Using `ncclient`, how do you lock the candidate datastore?",
+                "options": [
+                    "A) manager.lock(target='candidate')",
+                    "B) manager.secure('candidate')",
+                    "C) manager.candidate.lock()",
+                    "D) It is locked automatically"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The `lock()` method takes a 'target' argument. While 'candidate' is often the default target for lock if supported, specifying it explicitly handles the lock operation.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which Python structure is equivalent to a JSON object?",
+                "options": [
+                    "A) List",
+                    "B) Set",
+                    "C) Dictionary (dict)",
+                    "D) Tuple"
+                ],
+                "correctAnswer": "C",
+                "explanation": "A JSON object `{\"key\": \"value\"}` maps directly to a Python dictionary `{'key': 'value'}`.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which command initializes a new Git repository?",
+                "options": [
+                    "A) git start",
+                    "B) git new",
+                    "C) git init",
+                    "D) git create"
+                ],
+                "correctAnswer": "C",
+                "explanation": "`git init` creates a new empty Git repository or reinitializes an existing one (creating the .git directory).",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "To execute a Python script 'automation.py' in the background on Linux/Guest Shell, you can use:",
+                "options": [
+                    "A) python automation.py &",
+                    "B) bg python automation.py",
+                    "C) start automation.py",
+                    "D) run automation.py"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Appending an ampersand (`&`) to a command in a POSIX shell runs the command in the background, allowing the user to continue using the shell.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which field in an Ansible task captures the output for later use?",
+                "options": [
+                    "A) output",
+                    "B) register",
+                    "C) save",
+                    "D) capture"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'register' keyword captures the return value of a task (including stdout, stderr, etc.) into a variable that can be used in subsequent tasks.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "In a YANG-based XML payload, the root element usually corresponds to:",
+                "options": [
+                    "A) The module or main container name",
+                    "B) <config>",
+                    "C) <data>",
+                    "D) <yang>"
+                ],
+                "correctAnswer": "A",
+                "explanation": "When constructing a payload, the root XML element usually matches the top-level container or RPC name defined in the YANG module.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "Which protocol does Ansible use by default for Linux servers vs. Network devices?",
+                "options": [
+                    "A) SSH for both (but different shells)",
+                    "B) Telnet for network, SSH for Linux",
+                    "C) WinRM for network",
+                    "D) FTP"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Ansible uses SSH for both. For Linux servers, it uses SFTP/SCP to transfer python code. For network devices (via network_cli), it uses SSH to establish a persistent session for CLI commands.",
+                "section": "Device-Level Network Automation"
+            },
+            {
+                "text": "When using `send_config_set` in Netmiko, input is provided as:",
+                "options": [
+                    "A) A single string",
+                    "B) A list of strings (commands)",
+                    "C) A JSON object",
+                    "D) A file path"
+                ],
+                "correctAnswer": "B",
+                "explanation": "`send_config_set` typically expects a list of configuration commands. It can accept a single string, but a list is the standard way to provide multiple commands.",
+                "section": "Device-Level Network Automation"
+            }
+        ]
+    },
+    {
+        "name": "Controller-Based Network Automation",
+        "questions": [
+            {
+                "text": "Which API in Cisco Catalyst Center (DNA Center) is used to retrieve the overall health of the network?",
+                "options": [
+                    "A) Intent API",
+                    "B) Integration API",
+                    "C) Multivendor API",
+                    "D) Events API"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The Intent API (specifically the 'Assurance' or 'Health' related endpoints within it) provides actionable insights into the network health, client health, and application health.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is the primary function of the Cisco SD-WAN vSmart controller?",
+                "options": [
+                    "A) Provides data plane forwarding",
+                    "B) Acts as the control plane, distributing routing and policy information via OMP",
+                    "C) Manages the configuration and monitoring (Management Plane)",
+                    "D) Authenticates devices joining the fabric (Orchestration Plane)"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The vSmart controller corresponds to the control plane. It uses the Overlay Management Protocol (OMP) to distribute routing info, security keys, and policy configurations to Edge devices.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which HTTP status code indicates that the client is unauthenticated in a REST API?",
+                "options": [
+                    "A) 200 OK",
+                    "B) 401 Unauthorized",
+                    "C) 403 Forbidden",
+                    "D) 404 Not Found"
+                ],
+                "correctAnswer": "B",
+                "explanation": "HTTP 401 'Unauthorized' specifically means the request lacks valid authentication credentials. 403 'Forbidden' means the client is authenticated but authorized to access the resource.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "To interact with the Cisco Meraki Dashboard API, what must be included in the HTTP header?",
+                "options": [
+                    "A) Authorization: Bearer <token>",
+                    "B) X-Cisco-Meraki-API-Key: <key>",
+                    "C) Cookie: <session_id>",
+                    "D) Accept-Encoding: gzip"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Meraki uses a custom header 'X-Cisco-Meraki-API-Key' to authenticate API requests with the generated API key.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which Cisco SD-WAN component is the single pane of glass for management (GUI)?",
+                "options": [
+                    "A) vSmart",
+                    "B) vBond",
+                    "C) vManage",
+                    "D) vEdge"
+                ],
+                "correctAnswer": "C",
+                "explanation": "vManage is the centralized management system that provides the GUI for configuring, monitoring, and troubleshooting the SD-WAN fabric.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "In the context of REST APIs, what is 'Payload'?",
+                "options": [
+                    "A) The URL parameters",
+                    "B) The body of the request or response containing the data",
+                    "C) The header information",
+                    "D) The encryption key"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The payload is the actual data (usually in JSON or XML format) sent in the body of a POST/PUT request or returned in the body of a response.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which Python library is specifically designed to facilitate testing code by simulating API responses?",
+                "options": [
+                    "A) simulator.py",
+                    "B) unittest.mock (or plain mock)",
+                    "C) pylint",
+                    "D) auto-test"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'unittest.mock' library (standard in Python 3) allows you to replace parts of your system (like API calls) with mock objects to test behavior without actually hitting a real server.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is the format of the token typically returned by Cisco Catalyst Center (DNA Center) authentication?",
+                "options": [
+                    "A) OAuth2 Access Token",
+                    "B) X-Auth-Token (service ticket)",
+                    "C) Basic Auth string",
+                    "D) JWT"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Catalyst Center returns a service ticket (often referred to as 'Token' in the JSON body) which must be included in the 'X-Auth-Token' header for subsequent requests.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which protocol is primarily used by Cisco Catalyst Center to communicate southbound with network devices?",
+                "options": [
+                    "A) RESTCONF only",
+                    "B) CLI (SSH/Telnet), SNMP, and NETCONF",
+                    "C) Carrier Pigeon",
+                    "D) HTTP only"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Catalyst Center uses a variety of southbound protocols including SSH (CLI), SNMP, and NETCONF to discover, configure, and monitor the underlying network infrastructure.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "In a robust Python automation script, why would you use a 'try-except' block around an API call?",
+                "options": [
+                    "A) To make the code run faster",
+                    "B) To handle potential exceptions (network errors, timeout, 500 errors) gracefully",
+                    "C) To encrypt the data",
+                    "D) It is mandatory syntax for all functions"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A try-except block allows the script to catch errors (Exceptions) that occur during execution (like a connection timeout) and handle them (e.g., retry or log error) rather than crashing the program.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is the purpose of the Cisco SD-WAN vBond orchestrator?",
+                "options": [
+                    "A) It manages data traffic",
+                    "B) It authenticates devices and points them to the vManage and vSmart",
+                    "C) It provides the GUI",
+                    "D) It is a firewall"
+                ],
+                "correctAnswer": "B",
+                "explanation": "vBond is the orchestration plane. It is the first point of contact for any device coming up; it validates the device and provides the IP addresses of vManage and vSmart.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which Cisco Meraki API endpoint allows you to return a specific organization's inventory?",
+                "options": [
+                    "A) GET /organizations/{organizationId}/inventoryDevices",
+                    "B) GET /inventory",
+                    "C) GET /devices",
+                    "D) POST /inventory"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The endpoint '/organizations/{organizationId}/inventoryDevices' is used to retrieve the inventory of devices for a specific organization.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "When parsing a JSON response `data = {\"response\": [{\"id\": \"123\"}]}` in Python, how do you access the 'id'?",
+                "options": [
+                    "A) data[\"id\"]",
+                    "B) data.response.id",
+                    "C) data[\"response\"][0][\"id\"]",
+                    "D) data->response->id"
+                ],
+                "correctAnswer": "C",
+                "explanation": "The structure is a dictionary containing a list 'response', which contains a dictionary. So you access 'response', then the first index [0], then the key 'id'.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is typically the default content-type for Cisco SD-WAN vManage REST API?",
+                "options": [
+                    "A) application/xml",
+                    "B) application/json",
+                    "C) text/plain",
+                    "D) application/yaml"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The vManage API typically consumes and produces JSON data.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which HTTP method is idempotent and used to update a resource by replacing it entirely?",
+                "options": [
+                    "A) POST",
+                    "B) PUT",
+                    "C) PATCH",
+                    "D) GET"
+                ],
+                "correctAnswer": "B",
+                "explanation": "PUT is idempotent and is used to replace the target resource with the request payload. PATCH is used for partial updates.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is the correct way to pass parameters in a GET request using Python requests?",
+                "options": [
+                    "A) requests.get(url, json=params)",
+                    "B) requests.get(url, params=params)",
+                    "C) requests.get(url, data=params)",
+                    "D) requests.get(url, headers=params)"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The `params` keyword argument is used to pass query string parameters (key-value pairs) which are automatically appended to the URL (e.g., `url?key=value`).",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which tool in Cisco Catalyst Center allows you to graphically design the network hierarchy (Sites, Buildings, Floors)?",
+                "options": [
+                    "A) Command Runner",
+                    "B) Design > Network Hierarchy",
+                    "C) Provision > Inventory",
+                    "D) Assurance > Dashboards"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'Design' area in Catalyst Center allows you to define the physical location hierarchy (Global > Area > Building > Floor) and assign settings to them.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What does a wrapper function do in the context of API usage?",
+                "options": [
+                    "A) Encrypts the API key",
+                    "B) Simplifies the API call by abstracting the request details (url, headers, auth) into a reusable function",
+                    "C) Slows down the code",
+                    "D) Converts Python to C++"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A wrapper function encapsulates the complexity of making an API call (handling authentication, error checking, URL formatting), providing a simple interface for the rest of the code.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "In a CI/CD pipeline, what is the role of 'Continuous Integration'?",
+                "options": [
+                    "A) Deploying code to production",
+                    "B) Frequently merging code changes into a shared repository and running automated tests",
+                    "C) Buying new hardware",
+                    "D) Monitoring the network"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Continuous Integration (CI) implies that developers merge their changes back to the main branch as often as possible. The changes are validated by creating a build and running automated tests.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which attribute in a pyATS testbed YAML file defines the connection class for a device?",
+                "options": [
+                    "A) access_level",
+                    "B) os",
+                    "C) type",
+                    "D) connections: settings"
+                ],
+                "correctAnswer": "B",
+                "explanation": "While 'connections' defines specific arguments, the 'os' (operating system) field (e.g., 'iosxe') is critical for pyATS/Unicon to determine the correct connection class and state machine to use.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is the effect of `response.raise_for_status()` in the Python requests library?",
+                "options": [
+                    "A) It prints the status code",
+                    "B) It raises an HTTPError if the status code indicates an error (4xx or 5xx)",
+                    "C) It saves the response to a file",
+                    "D) It ignores errors"
+                ],
+                "correctAnswer": "B",
+                "explanation": "This method checks the status code. If it is 400-599, it raises an exception, allowing the script to handle failure immediately.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which data serialization format is strictly a superset of JSON?",
+                "options": [
+                    "A) XML",
+                    "B) YAML",
+                    "C) Protobuf",
+                    "D) CSV"
+                ],
+                "correctAnswer": "B",
+                "explanation": "YAML 1.2 is designed to be a strict superset of JSON, meaning any valid JSON file is also a valid YAML file.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "In an Ansible inventory, how do you group hosts?",
+                "options": [
+                    "A) Using [group_name] headers",
+                    "B) Using {group_name} braces",
+                    "C) Using <group_name> tags",
+                    "D) You cannot group hosts"
+                ],
+                "correctAnswer": "A",
+                "explanation": "In an INI inventory file, groups are defined by putting the group name in square brackets `[webservers]` followed by the list of hosts.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which Cisco platform uses 'Template Programmer' to deploy configuration templates?",
+                "options": [
+                    "A) Cisco Catalyst Center (DNA Center)",
+                    "B) Cisco Prime Infrastructure",
+                    "C) Cisco SD-WAN (vManage)",
+                    "D) Cisco Meraki"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Catalyst Center uses the 'Template Programmer' (part of the Provisioning workflow) to deploy Velocity or Jinja2 templates to devices.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is the maximum number of requests usually allowed by public APIs (Rate Limit)?",
+                "options": [
+                    "A) Unlimited",
+                    "B) It varies by API and plan (e.g., 5 requests/sec)",
+                    "C) Always 100/min",
+                    "D) 1 per day"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Rate limits are specific to the API provider and the user's subscription tier. It prevents abuse and ensures service availability.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "In a Python unit test, what is 'setUp()' used for?",
+                "options": [
+                    "A) To run the test",
+                    "B) To initialize resources (like connections or mock objects) before each test method runs",
+                    "C) To clean up after test",
+                    "D) To print results"
+                ],
+                "correctAnswer": "B",
+                "explanation": " The `setUp()` method is part of the unittest framework fixture. It is run automatically before *each* test method in the class to prepare the test environment.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which Python keyword is used to start a definition of a function?",
+                "options": [
+                    "A) func",
+                    "B) def",
+                    "C) function",
+                    "D) define"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The 'def' keyword is used to define functions in Python.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "The Meraki Dashboard API uses which architectural style?",
+                "options": [
+                    "A) SOAP",
+                    "B) REST",
+                    "C) gRPC",
+                    "D) CORBA"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The Meraki Dashboard API is a RESTful API, adhering to REST principles (Resource-based URLs, HTTP verbs, JSON payload).",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which header usually returns the rate limit status in Meraki API responses?",
+                "options": [
+                    "A) X-Rate-Limit-Remaining",
+                    "B) Rate-Limit",
+                    "C) Retry-After",
+                    "D) Status-Code"
+                ],
+                "correctAnswer": "C",
+                "explanation": "While many use X-Rate-Limit headers, Meraki sends a 'Retry-After' header specifically when a 429 status code is returned, telling the client how many seconds to wait.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is 'Path Manipulation' in Python regarding file handling?",
+                "options": [
+                    "A) Changing the router path",
+                    "B) Using libraries like `os.path` or `pathlib` to construct file paths dynamically across OSs",
+                    "C) Hacking the kernel",
+                    "D) Deleting files"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Path manipulation ensures that file paths are constructed correctly regardless of the operating system (e.g., handling forward slashes vs backslashes), using libraries like `pathlib`.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which component in Cisco SD-WAN distributes the data plane keys?",
+                "options": [
+                    "A) vSmart (via OMP)",
+                    "B) vBond",
+                    "C) vManage",
+                    "D) The devices generate their own without exchange"
+                ],
+                "correctAnswer": "A",
+                "explanation": "vSmart distributes the data plane encryption keys (IPsec SA parameters) to the Edge devices using OMP, enabling them to establish secure tunnels with each other.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is 'Linting' in code development?",
+                "options": [
+                    "A) Removing dust from server",
+                    "B) Static code analysis to flag programming errors, bugs, stylistic errors, and suspicious constructs",
+                    "C) Compiling the code",
+                    "D) Running the code"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Linting (using tools like pylint, flake8) checks the source code for programmatic and stylistic errors without executing it.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "In a unified diff (git diff), what does a line starting with '+' indicate?",
+                "options": [
+                    "A) A line was added",
+                    "B) A line was removed",
+                    "C) A comment",
+                    "D) A file header"
+                ],
+                "correctAnswer": "A",
+                "explanation": "In diff output, a '+' prefix indicates an added line, while a '-' prefix indicates a removed line.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "To obtain an authentication token from Cisco Catalyst Center, which API resource is typically called?",
+                "options": [
+                    "A) /dna/system/api/v1/auth/token",
+                    "B) /dna/intent/api/v1/token",
+                    "C) /api/login",
+                    "D) /auth/login"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The endpoint '/dna/system/api/v1/auth/token' (using Basic Auth) is the standard call to retrieve the service ticket (token).",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which data structure is best for storing unique items in Python?",
+                "options": [
+                    "A) List",
+                    "B) Set",
+                    "C) Tuple",
+                    "D) Dictionary"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A 'set' is an unordered collection of unique elements. Adding a duplicate item to a set has no effect.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which HTTP method should be used to retrieve only the headers of a resource?",
+                "options": [
+                    "A) HEAD",
+                    "B) GET_HEADERS",
+                    "C) OPTIONS",
+                    "D) POST"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The HEAD method asks for a response identical to that of a GET request, but without the response body. This is useful for retrieving meta-information written in response headers.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What does a '204 No Content' status code imply after a DELETE request?",
+                "options": [
+                    "A) The delete failed",
+                    "B) The delete was successful and there is no body to return",
+                    "C) The resource was not found",
+                    "D) The server crashed"
+                ],
+                "correctAnswer": "B",
+                "explanation": "204 No Content is the standard success response for a request that does not need to return a payload, commonly indicating a successful DELETE operation.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What is the primary usage of 'Webhooks' in network automation?",
+                "options": [
+                    "A) To phish users",
+                    "B) To receive near real-time notifications (callbacks) from a system when an event occurs",
+                    "C) To continuously poll the server",
+                    "D) To login"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Webhooks allow a system to push data to a configured URL when a specific event happens, eliminating the need for the client to constantly poll the server.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which component manages the control plane in a Software-Defined Access (SD-Access) fabric?",
+                "options": [
+                    "A) LISP (Locator/ID Separation Protocol) Map Server/Resolver",
+                    "B) VXLAN",
+                    "C) IS-IS",
+                    "D) The Border Node"
+                ],
+                "correctAnswer": "A",
+                "explanation": "In SD-Access, LISP is used for the control plane to manage the mapping of Endpoint IDs (EIDs) to Routing Locators (RLOCs).",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which library allows you to mock API responses in Python unit tests?",
+                "options": [
+                    "A) unittest.mock",
+                    "B) requests.mock",
+                    "C) fake_api",
+                    "D) simulator"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The 'unittest.mock' library is the standard Python library for mocking objects, allowing you to replace parts of your system (like API calls) with mock objects and make assertions about how they have been used.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "What does a '403 Forbidden' response usually imply in a Controller API?",
+                "options": [
+                    "A) Credentials are wrong",
+                    "B) Credentials are valid, but the user lacks permission for this resource",
+                    "C) The resource does not exist",
+                    "D) The server is down"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A 403 Forbidden error indicates that the server understands the request and the authentication is valid, but the server refuses to authorize the operation (e.g., RBAC restrictions).",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which SD-WAN policy type is used to control flow paths (e.g., Application Aware Routing)?",
+                "options": [
+                    "A) Data Policy",
+                    "B) Control Policy",
+                    "C) App Route Policy",
+                    "D) Local Policy"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Centralized Data Policies affect the data plane and are used to influence traffic flow, including Application-Aware Routing (AAR) and Traffic Engineering.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "For Meraki, what is required to enable API access?",
+                "options": [
+                    "A) It is on by default",
+                    "B) Enable 'Dashboard API access' in Organization > Settings",
+                    "C) Call support",
+                    "D) Install a certificate"
+                ],
+                "correctAnswer": "B",
+                "explanation": "API access is not enabled by default. An admin must navigate to the Organization > Settings page in the Meraki Dashboard to check 'Enable access to the Cisco Meraki Dashboard API'.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "Which Python dictionary method is used to get a value safely without erroring if key is missing?",
+                "options": [
+                    "A) dict[key]",
+                    "B) dict.get(key)",
+                    "C) dict.fetch(key)",
+                    "D) dict.find(key)"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The `get()` method returns the value for the specified key if key is in the dictionary. If not, it returns None (or a specified default value), whereas `dict[key]` extracts the value but would raise a KeyError if missing.",
+                "section": "Controller-Based Network Automation"
+            },
+            {
+                "text": "In Cisco Catalyst Center, what identifies a device for the purpose of Return on Investment (ROI) or End of Life (EoL) reports?",
+                "options": [
+                    "A) Its Hostname",
+                    "B) Its Serial Number and Product ID (PID)",
+                    "C) Its IP address",
+                    "D) Its Location"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Hardware identification for warranty, support, and EoL purposes is primarily driven by the unique Serial Number and the Product ID (PID) of the device.",
+                "section": "Controller-Based Network Automation"
+            }
+        ]
+    },
+    {
+        "name": "Operations",
+        "questions": [
+            {
+                "text": "Which content type is typically used for Model-Driven Telemetry (MDT) subscriptions?",
+                "options": [
+                    "A) application/json",
+                    "B) application/yang-data+xml",
+                    "C) text/html",
+                    "D) application/javascript"
+                ],
+                "correctAnswer": "B",
+                "explanation": "When using NETCONF to establish MDT subscriptions, the payload is often encoded in XML, and the content type `application/yang-data+xml` is commonly used to accurately represent the YANG-modeled data structure.",
+                "section": "Operations"
+            },
+            {
+                "text": "What is the primary advantage of Model-Driven Telemetry over SNMP?",
+                "options": [
+                    "A) It is older and more compatible",
+                    "B) It pushes data to the collector (streaming) rather than polling",
+                    "C) It uses less bandwidth explicitly",
+                    "D) It works only on Windows"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Model-Driven Telemetry (MDT) streams data to a collector in real-time, eliminating the overhead and delay associated with SNMP polling.",
+                "section": "Operations"
+            },
+            {
+                "text": "In a NETCONF <establish-subscription> request, what does the <period> element specify?",
+                "options": [
+                    "A) The duration of the subscription",
+                    "B) The interval in centiseconds between update records for a periodic subscription",
+                    "C) The number of packets to send",
+                    "D) The TCP port"
+                ],
+                "correctAnswer": "B",
+                "explanation": "In a periodic subscription, the `<period>` element defines the interval between updates in centiseconds (1/100th of a second).",
+                "section": "Operations"
+            },
+            {
+                "text": "Which Cisco Catalyst Center API is used to initiate a new Flow Analysis (Path Trace)?",
+                "options": [
+                    "A) GET /dna/intent/api/v1/flow-analysis",
+                    "B) POST /dna/intent/api/v1/flow-analysis",
+                    "C) PUT /dna/intent/api/v1/path-trace",
+                    "D) GET /dna/intent/api/v1/trace-path"
+                ],
+                "correctAnswer": "B",
+                "explanation": "To initiate a new Path Trace (Flow Analysis), a POST request is sent to `/dna/intent/api/v1/flow-analysis` with the source and destination details.",
+                "section": "Operations"
+            },
+            {
+                "text": "For a 'Client Health' issue in Cisco Catalyst Center, what API allows you to retrieve the 'Client Detail'?",
+                "options": [
+                    "A) GET /dna/intent/api/v1/client-detail?macAddress=<MAC>",
+                    "B) GET /dna/intent/api/v1/user-health",
+                    "C) POST /dna/clients/search",
+                    "D) GET /client/<MAC>"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The `client-detail` endpoint retrieves detailed health and attribute information for a specific client, identified by its MAC address.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which encoding is primarily used for gRPC dial-out telemetry?",
+                "options": [
+                    "A) JSON",
+                    "B) XML",
+                    "C) KV-GPB (Key-value Google Protocol Buffers) or GPB",
+                    "D) ASCII"
+                ],
+                "correctAnswer": "C",
+                "explanation": "gRPC dial-out telemetry commonly uses Google Protocol Buffers (GPB) or Key-Value GPB (KV-GPB) for efficient, compact binary encoding of data.",
+                "section": "Operations"
+            },
+            {
+                "text": "In Meraki, what is a 'Webhook' used for in an operational context?",
+                "options": [
+                    "A) To configure the firewall",
+                    "B) To receive real-time HTTP POST notifications about alerts (e.g., config changes, connectivity issues)",
+                    "C) To download firmware",
+                    "D) To access the CLI"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Meraki Webhooks allow external systems to receive real-time JSON-formatted HTTP POST notifications when specific alerts or events occur in the network.",
+                "section": "Operations"
+            },
+            {
+                "text": "When configuring a NETCONF subscription, what does 'on-change' mean?",
+                "options": [
+                    "A) Data is sent only when the value changes",
+                    "B) Data is sent every minute",
+                    "C) Data is sent when the device reboots",
+                    "D) You must pay for the change"
+                ],
+                "correctAnswer": "A",
+                "explanation": "An `on-change` subscription triggers a notification only when the value of the subscribed data node changes, rather than at fixed intervals.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which status code in a Path Trace response indicates the analysis is still running?",
+                "options": [
+                    "A) COMPLETED",
+                    "B) FAILED",
+                    "C) IN-PROGRESS",
+                    "D) PENDING"
+                ],
+                "correctAnswer": "C",
+                "explanation": "When a Path Trace is initiated, its status is `IN-PROGRESS` while the controller gathers data from network devices. It updates to `COMPLETED` or `FAILED` upon finishing.",
+                "section": "Operations"
+            },
+            {
+                "text": "To verify the health of the SD-WAN Control Plane, which vManage API is most relevant?",
+                "options": [
+                    "A) GET /dataservice/device/control/connections",
+                    "B) GET /dataservice/system/status",
+                    "C) GET /api/health",
+                    "D) GET /control/plane"
+                ],
+                "correctAnswer": "A",
+                "explanation": "This API endpoint retrieves the status of control connections for a device, which is critical for verifying the health of the SD-WAN Control Plane.",
+                "section": "Operations"
+            },
+            {
+                "text": "What is the purpose of the 'simulation' capability in network automation testing?",
+                "options": [
+                    "A) To play games",
+                    "B) To validate changes in a virtual environment (like CML or viral) before production",
+                    "C) To guess the password",
+                    "D) To generate random traffic"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Simulation allows engineers to test and validate configuration changes or automation scripts in a safe, virtualized environment (like Cisco Modeling Labs) without risking the production network.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which ThousandEyes agent type is installed on a user's laptop for end-user experience monitoring?",
+                "options": [
+                    "A) Cloud Agent",
+                    "B) Enterprise Agent",
+                    "C) Endpoint Agent",
+                    "D) Browser Agent"
+                ],
+                "correctAnswer": "C",
+                "explanation": "Endpoint Agents are browser plugins or system services installed on end-user devices (laptops, desktops) to monitor user experience from the edge.",
+                "section": "Operations"
+            },
+            {
+                "text": "How can you trigger a ThousandEyes test from Cisco Catalyst Center?",
+                "options": [
+                    "A) By using the 'App Hosting' or 'Assurance' integration features",
+                    "B) You cannot integrate them",
+                    "C) By sending an email",
+                    "D) By using SNMP"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Cisco Catalyst Center (formerly DNA Center) integrates with ThousandEyes, allowing you to deploy Enterprise Agents to supported switches via App Hosting and run tests.",
+                "section": "Operations"
+            },
+            {
+                "text": "In Meraki, which API endpoint provides the 'uplink status' of devices?",
+                "options": [
+                    "A) /networks/{networkId}/devices/uplink",
+                    "B) /organizations/{organizationId}/uplinks/statuses",
+                    "C) /device/status",
+                    "D) /uplink/check"
+                ],
+                "correctAnswer": "B",
+                "explanation": "This endpoint returns the uplink status (active, failed, latency, packet loss) for all devices in an organization, providing a high-level view of WAN health.",
+                "section": "Operations"
+            },
+            {
+                "text": "What is 'gNMI' (gRPC Network Management Interface) primarily used for?",
+                "options": [
+                    "A) Only for configuration",
+                    "B) Only for telemetry",
+                    "C) For both configuration management and streaming telemetry",
+                    "D) For web browsing"
+                ],
+                "correctAnswer": "C",
+                "explanation": "gNMI (gRPC Network Management Interface) is a unified protocol that supports both state management (configuration) and streaming telemetry.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which Cisco tool provides 'AppDynamics' integration for application performance monitoring?",
+                "options": [
+                    "A) Cisco Intersight (and via integration with AppD)",
+                    "B) Cisco Prime",
+                    "C) Cisco Works",
+                    "D) Cisco View"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Cisco Intersight integrates with AppDynamics to correlate infrastructure status with application performance, providing full-stack visibility.",
+                "section": "Operations"
+            },
+            {
+                "text": "The 'Issues' dashboard in Cisco Catalyst Center Assurance uses what mainly to detect problems?",
+                "options": [
+                    "A) Manual user input",
+                    "B) AI/ML correlations of streaming telemetry and events",
+                    "C) Static SNMP traps only",
+                    "D) Email reports"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Assurance uses AI/ML algorithms to correlate vast amounts of streaming telemetry and events, identifying root causes and distinguishing noise from actual issues.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which HTTP header indicates the format of the data being sent in a subscription notification?",
+                "options": [
+                    "A) Content-Type",
+                    "B) Accept-Encoding",
+                    "C) Data-Format",
+                    "D) Notification-Type"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The `Content-Type` header indicates the media type of the resource, such as `application/yang-data+json` or `application/ietf-notification+xml`.",
+                "section": "Operations"
+            },
+            {
+                "text": "In a 'dial-out' telemetry model, who initiates the connection?",
+                "options": [
+                    "A) The collector (server)",
+                    "B) The network device (router/switch)",
+                    "C) A third party",
+                    "D) No connection is established"
+                ],
+                "correctAnswer": "B",
+                "explanation": "In a dial-out model, the network device initiates the connection to sending telemetry data to the collector (server).",
+                "section": "Operations"
+            },
+            {
+                "text": "What is the purpose of 'App Hosting' on Cisco Catalyst 9000 switches?",
+                "options": [
+                    "A) To host a website for the public",
+                    "B) To run containerized applications (like ThousandEyes Enterprise Agent) directly on the switch",
+                    "C) To run mobile apps",
+                    "D) To replace the IOS"
+                ],
+                "correctAnswer": "B",
+                "explanation": "App Hosting allows Cisco Catalyst switches to run Docker-style containers, enabling edge computing integration for tools like ThousandEyes agents or iPerf.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which logic is best for checking if an interface is 'up' using Python and JSON output?",
+                "options": [
+                    "A) if 'up' in output_string",
+                    "B) if data['interface'][0]['status'] == 'up'",
+                    "C) check_up()",
+                    "D) ping it"
+                ],
+                "correctAnswer": "B",
+                "explanation": "When parsing JSON output (as a dictionary), you access specific values using keys. Option B correctly checks the nested 'status' field.",
+                "section": "Operations"
+            },
+            {
+                "text": "What defines a 'KPI' in the context of Cisco Catalyst Center Assurance?",
+                "options": [
+                    "A) Key Performance Indicator (e.g., Wireless Onboarding Time)",
+                    "B) Key Password Interface",
+                    "C) Kernel Panic Indicator",
+                    "D) Known Protocol Index"
+                ],
+                "correctAnswer": "A",
+                "explanation": "A KPI is a quantifiable metric that reflects how well the network is achieving key business or operational goals, such as successful wireless client onboarding.",
+                "section": "Operations"
+            },
+            {
+                "text": "To subscribe to YANG-model based data via NETCONF, you generally use which RPC?",
+                "options": [
+                    "A) <get-config>",
+                    "B) <establish-subscription>",
+                    "C) <subscribe>",
+                    "D) <listen>"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The `<establish-subscription>` RPC is defined in RFC 8641 for subscribing to YANG-modeled data updates (both periodic and on-change).",
+                "section": "Operations"
+            },
+            {
+                "text": "Which API call allows you to retrieve the list of system 'events' or 'alarms' in SD-WAN vManage?",
+                "options": [
+                    "A) GET /dataservice/alarms",
+                    "B) POST /alarms/list",
+                    "C) GET /system/events",
+                    "D) GET /logs"
+                ],
+                "correctAnswer": "A",
+                "explanation": "This endpoint retrieves a list of active alarms in the SD-WAN fabric, providing visibility into system events and issues.",
+                "section": "Operations"
+            },
+            {
+                "text": "What information does the 'Health Score' in Cisco Catalyst Center provide?",
+                "options": [
+                    "A) How much CPU is being used",
+                    "B) An aggregated metric (1-10) indicating the overall performance of devices and clients",
+                    "C) The temperature of the room",
+                    "D) The cost of the network"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The Health Score is a computed value from 1 to 10 that provides a quick, high-level summary of the health of a network device, client, or application.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which Meraki dashboard monitoring tool provides a visual topology of the network?",
+                "options": [
+                    "A) The 'Topology' page",
+                    "B) The 'Map' page",
+                    "C) The 'List' page",
+                    "D) The 'Graph' page"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The Topology page in the Meraki Dashboard automatically generates a visual map of the physical links and layer 3 connections between Meraki devices.",
+                "section": "Operations"
+            },
+            {
+                "text": "In a CI/CD pipeline for network automation, what is the role of 'Jenkins'?",
+                "options": [
+                    "A) A router OS",
+                    "B) An automation server used to build, test, and deploy code",
+                    "C) A database",
+                    "D) A monitoring tool"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Jenkins is a popular open-source automation server used in CI/CD pipelines to orchestrate the building, testing, and deployment of software and network automation code.",
+                "section": "Operations"
+            },
+            {
+                "text": "When verifying a RESTCONF API response, a '200 OK' usually contains:",
+                "options": [
+                    "A) The requested data in the body (JSON/XML)",
+                    "B) Nothing, just the header",
+                    "C) An error message",
+                    "D) A redirect"
+                ],
+                "correctAnswer": "A",
+                "explanation": "A `200 OK` status code in RESTCONF (and HTTP generally) indicates a successful request, and for GET requests, the body contains the requested data.",
+                "section": "Operations"
+            },
+            {
+                "text": "What is the function of the 'TICK Stack' (Telegraf, InfluxDB, Chronograf, Kapacitor) in telemetry?",
+                "options": [
+                    "A) To route packets",
+                    "B) To collect, store, visualize, and alert on time-series data (telemetry)",
+                    "C) To configure VLANs",
+                    "D) To manage users"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The TICK stack (Telegraf, InfluxDB, Chronograf, Kapacitor) is a comprehensive open-source platform specifically designed for handling time-series data like network telemetry.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which parameter is critical when creating a Meraki Webhook Receiver?",
+                "options": [
+                    "A) The shared secret",
+                    "B) The IP address of the sender",
+                    "C) The MAC address",
+                    "D) The serial number"
+                ],
+                "correctAnswer": "A",
+                "explanation": "A shared secret is used to secure Webhooks; the receiver uses it to verify that the incoming payload actually originated from the Meraki cloud.",
+                "section": "Operations"
+            },
+            {
+                "text": "How can you programmatically restart a specific device using the Meraki API?",
+                "options": [
+                    "A) POST /devices/{serial}/reboot",
+                    "B) PUT /devices/restart",
+                    "C) GET /reboot",
+                    "D) DELETE /uptime"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Actions like rebooting a device are performed via POST requests. This specific endpoint triggers a reboot for the device with the specified serial number.",
+                "section": "Operations"
+            },
+            {
+                "text": "What does 'dial-in' telemetry mean?",
+                "options": [
+                    "A) The collector initiates the connection to the device to subscribe",
+                    "B) The device dials the server",
+                    "C) You use a modem",
+                    "D) It uses a phone line"
+                ],
+                "correctAnswer": "A",
+                "explanation": "In a dial-in model, the external collector or application initiates the connection (e.g., via NETCONF or gRPC) to the device to request or subscribe to data.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which vManage API provides real-time monitoring statistics for an interface?",
+                "options": [
+                    "A) GET /dataservice/statistics/interface",
+                    "B) GET /dataservice/device/interface/stats",
+                    "C) POST /stats/interface",
+                    "D) GET /monitor/interface"
+                ],
+                "correctAnswer": "B",
+                "explanation": "This API retrieves data and statistics for device interfaces, allowing for performance monitoring and troubleshooting.",
+                "section": "Operations"
+            },
+            {
+                "text": "In Python, which Exception should you catch to handle a timeout connection error?",
+                "options": [
+                    "A) requests.exceptions.ConnectTimeout",
+                    "B) requests.exceptions.HTTPError",
+                    "C) ValueError",
+                    "D) IndexError"
+                ],
+                "correctAnswer": "A",
+                "explanation": "When using the Python `requests` library, a `ConnectTimeout` exception is raised if the client cannot establish a connection to the server within the specified timeout.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which tool in Cisco Catalyst Center allows you to compare the 'Running Config' vs 'Startup Config'?",
+                "options": [
+                    "A) Command Runner",
+                    "B) Config Archive / Drift",
+                    "C) Path Trace",
+                    "D) Sensor"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The Config Drift feature compares the current running configuration on a device with a known-good baseline or the startup configuration to identify unauthorized or unplanned changes.",
+                "section": "Operations"
+            },
+            {
+                "text": "For an 'Endpoint Agent' in ThousandEyes, where does it reside?",
+                "options": [
+                    "A) On the router",
+                    "B) On the end-user's workstation (Windows/Mac)",
+                    "C) In the cloud",
+                    "D) On the switch"
+                ],
+                "correctAnswer": "B",
+                "explanation": "ThousandEyes Endpoint Agents are installed directly on end-user laptops and desktops to monitor the network experience from the user's perspective.",
+                "section": "Operations"
+            },
+            {
+                "text": "What is 'ELK Stack' (Elasticsearch, Logstash, Kibana) used for?",
+                "options": [
+                    "A) Centralized logging and analysis",
+                    "B) Routing",
+                    "C) Switching",
+                    "D) Authentication"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The ELK Stack (Elasticsearch, Logstash, Kibana) is widely used for aggregating, processing, and visualizing log data from various sources in a centralized location.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which Meraki API call would you use to get the loss and latency history of a device?",
+                "options": [
+                    "A) GET /devices/{serial}/lossAndLatencyHistory",
+                    "B) GET /devices/{serial}/ping",
+                    "C) GET /stats/latency",
+                    "D) GET /history"
+                ],
+                "correctAnswer": "A",
+                "explanation": "This API endpoint provides historical data on packet loss and latency for a specific device, which is essential for troubleshooting connection quality.",
+                "section": "Operations"
+            },
+            {
+                "text": "To troubleshoot a failed API call, which HTTP Header gives you the Request ID in many Cisco APIs?",
+                "options": [
+                    "A) X-Request-ID (or similar)",
+                    "B) Content-ID",
+                    "C) User-ID",
+                    "D) Error-ID"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The `X-Request-ID` header is commonly used in APIs to track a specific request across distributed systems, aiding in debugging and log correlation.",
+                "section": "Operations"
+            },
+            {
+                "text": "What is the benefit of 'structured logging' (JSON) over plain text logging?",
+                "options": [
+                    "A) It is easier for machines to parse and query",
+                    "B) It is smaller in size",
+                    "C) It is human readable only",
+                    "D) It takes less CPU"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Structured logging (e.g., using JSON) organizes log messages into consistent fields, making it much easier for automated tools to ingest, index, and query the data.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which command on IOS XE shows the current YANG subscriptions?",
+                "options": [
+                    "A) show telemetry ietf subscription all",
+                    "B) show netconf status",
+                    "C) show yang subscriptions",
+                    "D) show subscription"
+                ],
+                "correctAnswer": "A",
+                "explanation": "On Cisco IOS XE devices, this command displays detailed information about all current IETF standard telemetry subscriptions.",
+                "section": "Operations"
+            },
+            {
+                "text": "In ThousandEyes, what is a 'Transaction Test'?",
+                "options": [
+                    "A) It simulates a user interacting with a website (logging in, clicking, etc.) via a script (Selenium)",
+                    "B) It pings a server",
+                    "C) It checks DNS",
+                    "D) It transfers a file"
+                ],
+                "correctAnswer": "A",
+                "explanation": "A Transaction Test in ThousandEyes uses scripts (often Selenium-based) to emulate complex user interactions with a web application to verify its functionality.",
+                "section": "Operations"
+            },
+            {
+                "text": "What timestamp format is typically used in clean telemetry data (ISO 8601)?",
+                "options": [
+                    "A) YYYY-MM-DDTHH:MM:SSZ",
+                    "B) MM/DD/YYYY",
+                    "C) Unix Epoch",
+                    "D) DD-MM-YYYY"
+                ],
+                "correctAnswer": "A",
+                "explanation": "ISO 8601 (e.g., `2023-10-27T10:30:00Z`) is the standard timestamp format used in telemetry and APIs, ensuring unambiguous time representation across timezones.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which Cisco Catalyst Center tool can effectively visualize the path of a packet across legacy and SD-Access networks?",
+                "options": [
+                    "A) Path Trace",
+                    "B) Traceroute",
+                    "C) Ping",
+                    "D) Wireshark"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Path Trace in Cisco Catalyst Center provides a hop-by-hop visualization of the path a packet takes, analyzing ACLs and routing tables to identify connectivity issues.",
+                "section": "Operations"
+            },
+            {
+                "text": "When sending an alert to a Webex Room via API, which HTTP method is used?",
+                "options": [
+                    "A) POST /messages",
+                    "B) GET /messages",
+                    "C) PUT /room",
+                    "D) DELETE /alert"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The Webex Messaging API uses a POST request to the `/messages` endpoint to send a new message (alert) to a room or person.",
+                "section": "Operations"
+            },
+            {
+                "text": "What does 'idempotent' mean in the context of an Operations API?",
+                "options": [
+                    "A) Making the same request multiple times has the same effect as making it once",
+                    "B) It only works once",
+                    "C) It deletes data",
+                    "D) It fails on retry"
+                ],
+                "correctAnswer": "A",
+                "explanation": "An idempotent operation guarantees that repeating the request (e.g., setting an interface description) produces the same state as the initial request, preventing unintended side effects.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which vManage API returns the 'omni' data (deep packet inspection stats)?",
+                "options": [
+                    "A) /dataservice/statistics/dpi",
+                    "B) /dataservice/device/dpi",
+                    "C) /dpi/stats",
+                    "D) /omni/data"
+                ],
+                "correctAnswer": "A",
+                "explanation": "This endpoint allows retrieval of Deep Packet Inspection (DPI) statistics, giving visibility into application traffic types and usage on the network.",
+                "section": "Operations"
+            },
+            {
+                "text": "In network simulation (CML), what file format acts as the topology definition?",
+                "options": [
+                    "A) YAML or JSON (CML file)",
+                    "B) Word Doc",
+                    "C) CSV",
+                    "D) Bitmap"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Cisco Modeling Labs (CML) uses YAML (or JSON) files to define network topologies, including device types, connections, and configurations.",
+                "section": "Operations"
+            },
+            {
+                "text": "Which Python library is efficient for handling large sets of data/logs returned by telemetry?",
+                "options": [
+                    "A) pandas",
+                    "B) turtle",
+                    "C) tkinter",
+                    "D) pygame"
+                ],
+                "correctAnswer": "A",
+                "explanation": "`pandas` is a powerful Python library specialized for data manipulation and analysis, making it ideal for processing structured data sets like telemetry tables or CSV logs.",
+                "section": "Operations"
+            },
+            {
+                "text": "How do you check if a specific Meraki device is compliant with a policy?",
+                "options": [
+                    "A) Check the 'Alerts' or 'Security Center' API endpoints",
+                    "B) You cannot",
+                    "C) Configure it",
+                    "D) Reboot it"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The Meraki Dashboard and API provide compliance and security information through the 'Alerts' configuration or specific 'Security Center' endpoints, allowing you to check for policy violations.",
+                "section": "Operations"
+            }
+        ]
+    },
+    {
+        "name": "AI in Automation",
+        "questions": [
+            {
+                "text": "What is the primary difference between Predictive AI and Generative AI in network operations?",
+                "options": [
+                    "A) Predictive AI forecasts future events based on historical data; Generative AI creates new content (configs, code, text)",
+                    "B) Predictive AI writes code; Generative AI monitors traffic",
+                    "C) They are the same",
+                    "D) Generative AI is only for images"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Predictive AI analyzes historical data to forecast future outcomes (e.g., link failure), while Generative AI creates new data or content (e.g., Python scripts or configurations).",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is 'Model Context Protocol' (MCP) used for in the context of AI Assistants?",
+                "options": [
+                    "A) To route packets between routers",
+                    "B) To standardize how AI models interact with external data and tools (like local files or APIs)",
+                    "C) To encrypt the model credentials",
+                    "D) To manage the contextual CLI help"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The Model Context Protocol (MCP) provides a standard interface for AI models to connect with external data sources and tools, enabling them to perform actions beyond text generation.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which risk is most associated with using Large Language Models (LLMs) for generating network configuration code?",
+                "options": [
+                    "A) Packet Loss",
+                    "B) Hallucination (generating plausible but incorrect or non-existent commands)",
+                    "C) High CPU usage on the router",
+                    "D) Buffer overflow"
+                ],
+                "correctAnswer": "B",
+                "explanation": "LLMs may confidently generate code or commands that look correct but are syntactically wrong or reference non-existent features, known as hallucination.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What does 'FastMCP' facilitate?",
+                "options": [
+                    "A) Fast packet switching",
+                    "B) Rapid development of MCP servers to expose tools/data to AI agents",
+                    "C) Faster Wi-Fi speeds",
+                    "D) Quick boot times for IOS XE"
+                ],
+                "correctAnswer": "B",
+                "explanation": "FastMCP is a library or framework designed to simplify and speed up the creation of MCP servers, making it easier to expose local tools and data to AI agents.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "In the context of AI, what is 'RAG' (Retrieval-Augmented Generation)?",
+                "options": [
+                    "A) A routing protocol",
+                    "B) A technique to optimize the model output by referencing an authoritative knowledge base before generating a response",
+                    "C) A random number generator",
+                    "D) A red-amber-green dashboard"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Retrieval-Augmented Generation (RAG) improves LLM accuracy by retrieving relevant, up-to-date information from a trusted knowledge base and feeding it to the model along with the prompt.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which Cisco platform leverages AI/ML for 'predictive' insights into network health?",
+                "options": [
+                    "A) Cisco Catalyst Center (Assurance)",
+                    "B) Cisco TFTP Server",
+                    "C) Cisco Packet Tracer",
+                    "D) Cisco ACS"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Cisco Catalyst Center Assurance uses AI/ML to provide predictive insights, such as forecasting wireless performance issues or identifying potential device failures.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "When using an AI coding assistant, who is ultimately responsible for the correctness of the deployed code?",
+                "options": [
+                    "A) The AI vendor",
+                    "B) The Network Engineer / Developer",
+                    "C) The IDE manufacturer",
+                    "D) Usage is at own risk, so no one"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI tools are assistants, not replacements. The human engineer is ultimately responsible for verifying and testing any code or configuration before deployment.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is a 'System Prompt' in the context of an AI Agent?",
+                "options": [
+                    "A) The login banner of a router",
+                    "B) The initial set of instructions defining the AI's role, constraints, and behavior",
+                    "C) A popup window",
+                    "D) The operating system command line"
+                ],
+                "correctAnswer": "B",
+                "explanation": "A System Prompt is a hidden instruction provided to the AI at the start of a session to set its persona (e.g., 'You are a network expert') and boundaries.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which is a valid use case for Generative AI in network troubleshooting?",
+                "options": [
+                    "A) Physically replacing a cable",
+                    "B) Summarizing complex logs and suggesting potential root causes based on symptoms",
+                    "C) Predicting hardware failure years in advance",
+                    "D) Generating electricity"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Generative AI excels at processing large amounts of unstructured text (logs) and summarizing them or suggesting troubleshooting steps based on patterns.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Why is 'Context Window' important when feeding network logs to an LLM?",
+                "options": [
+                    "A) It determines how much information the model can consider at one time",
+                    "B) It determines the screen resolution",
+                    "C) It is the time of day the model works",
+                    "D) It controls the ventilation"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The context window limits the amount of text (prompt + response + history) the model can process in a single interaction. Logs exceeding this must be truncated or summarized.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What does 'Zero-Shot' prompting mean?",
+                "options": [
+                    "A) Sending a prompt without any examples of the desired output",
+                    "B) Restarting the device without saving",
+                    "C) A prompt that fails",
+                    "D) Using a camera"
+                ],
+                "correctAnswer": "A",
+                "explanation": "In Zero-Shot prompting, the user asks the AI to perform a task without providing any examples, relying solely on the model's pre-trained knowledge.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which privacy concern is critical when using public cloud-based AI tools for network automation?",
+                "options": [
+                    "A) The tools might run too fast",
+                    "B) Leaking sensitive data (IPs, passwords, topology) into the public model training data",
+                    "C) The AI might get bored",
+                    "D) Lack of color schemes"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Sending sensitive network data (configs, passwords) to public AI models poses a risk that the data could be exposed or used to train future versions of the model.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "How can an MCP Server enhance an AI agent's capability?",
+                "options": [
+                    "A) By increasing the internet speed",
+                    "B) By giving the AI the ability to execute tools (like ping, reading files) or query databases",
+                    "C) By upgrading the GPU",
+                    "D) By lowering latency"
+                ],
+                "correctAnswer": "B",
+                "explanation": "An MCP Server exposes specific capabilities (tools) to the AI, allowing it to interact with the real world (e.g., query a database, run a script) rather than just chatting.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is 'Chain-of-Thought' prompting?",
+                "options": [
+                    "A) A blockchain technology",
+                    "B) Encouraging the model to explain its reasoning step-by-step before giving the final answer",
+                    "C) Linking routers together",
+                    "D) A recursive loop"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Chain-of-Thought prompting asks the model to 'think step-by-step,' which often improves accuracy on complex logic or troubleshooting tasks.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "In AI-driven telemetry, what is 'Anomaly Detection'?",
+                "options": [
+                    "A) Finding bugs in the code",
+                    "B) Identifying patterns that deviate significantly from the established baseline behavior",
+                    "C) Detecting viruses",
+                    "D) Finding lost cables"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI-driven anomaly detection establishes a baseline of normal network behavior and alerts on significant deviations (e.g., unusual traffic spikes or protocol errors).",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which allows an AI model to interact with a proprietary API not present in its training data?",
+                "options": [
+                    "A) Function Calling / Tool Use",
+                    "B) More training",
+                    "C) Magic",
+                    "D) Overclocking"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Function Calling allows an LLM to generate structured output (like JSON) specifying a function to call and its arguments, enabling interaction with external APIs.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is the role of an 'Embedding' in AI search?",
+                "options": [
+                    "A) To put a router in a rack",
+                    "B) Converting text/data into a vector (list of numbers) to measure semantic similarity",
+                    "C) Embedding a video in a webpage",
+                    "D) A type of screw"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Embeddings represent text as numerical vectors. Similar concepts have vectors that are close together in mathematical space, enabling semantic search (e.g., finding relevant docs).",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which component is essential for a 'Self-Correction' loop in AI code generation?",
+                "options": [
+                    "A) A feedback mechanism (e.g., running the code and capturing the error)",
+                    "B) A larger monitor",
+                    "C) Faster internet",
+                    "D) A mechanical keyboard"
+                ],
+                "correctAnswer": "A",
+                "explanation": "A self-correction loop involves the AI generating code, running it (or a test), capturing any errors, and using that feedback to generate a fixed version.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is 'Temperature' in the context of LLM parameters?",
+                "options": [
+                    "A) The heat of the server",
+                    "B) A setting that controls the randomness/creativity of the output (0 = deterministic, 1 = creative)",
+                    "C) The mood of the AI",
+                    "D) The speed of generation"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Lower temperature (near 0) makes the output more deterministic and focused (good for code), while higher temperature makes it more random and creative.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which is an example of 'Predictive AI' in Cisco SD-WAN?",
+                "options": [
+                    "A) Generating a new policy",
+                    "B) Analytics engine forecasting WAN link saturation based on past trends",
+                    "C) Configuring an interface",
+                    "D) Rebooting a router"
+                ],
+                "correctAnswer": "B",
+                "explanation": "vAnalytics in Cisco SD-WAN uses predictive AI to forecast circuit utilization and bandwidth demands, helping with capacity planning.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "How does 'Few-Shot' prompting improve AI code generation?",
+                "options": [
+                    "A) By providing a few examples of input-output pairs to guide the model's style and format",
+                    "B) By guessing",
+                    "C) By running the code 3 times",
+                    "D) It makes it worse"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Few-Shot prompting includes clear examples (e.g., 'Input: X, Output: Y') in the prompt, which significantly helps the model understand the desired format and logic.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is the 'Knowledge Cutoff' of an AI model?",
+                "options": [
+                    "A) The date the model stops working",
+                    "B) The date up to which the model was trained; it knows nothing of events after this date without external tools",
+                    "C) The maximum file size",
+                    "D) The IQ limit"
+                ],
+                "correctAnswer": "B",
+                "explanation": "LLMs are trained on data up to a specific point in time. They do not know about events, vulnerabilities, or software versions released after that date unless provided via context (RAG).",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "In the context of AI Agents, what is 'planning'?",
+                "options": [
+                    "A) Scheduling a meeting",
+                    "B) Breaking down a high-level user request into a sequence of executable steps/tools",
+                    "C) Drawing a diagram",
+                    "D) Saving a file"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI Agents use planning to decompose a complex goal (e.g., 'Troubleshoot OSPF') into a logical sequence of tool calls (e.g., 'Check neighbors,' 'Check interface,' 'Check logs').",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which is a security best practice when using AI for regex generation?",
+                "options": [
+                    "A) Copy-paste blindly",
+                    "B) Verify the regex avoids 'ReDoS' (Regular Expression Denial of Service) and matches strictly what is intended",
+                    "C) Use the longest regex possible",
+                    "D) Don't use regex"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI-generated regex can be inefficient or overly broad. Verification is needed to prevent ReDoS attacks and ensure it doesn't match unintended data.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is a 'Vector Database' primarily used for in AI applications?",
+                "options": [
+                    "A) Storing relational user data",
+                    "B) Storing and retrieving high-dimensional vectors for semantic search (e.g., for RAG)",
+                    "C) Storing images",
+                    "D) Storing passwords"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Vector databases are specialized to store embeddings and perform efficient similarity searches, acting as the knowledge retrieval engine for RAG systems.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which Cisco solution uses 'Machine Reasoning' to automate troubleshooting steps?",
+                "options": [
+                    "A) Cisco Catalyst Center (Machine Reasoning Engine - MRE)",
+                    "B) Cisco IOS",
+                    "C) Cisco ASA",
+                    "D) Cisco Prime"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The Machine Reasoning Engine (MRE) in Catalyst Center automates complex troubleshooting workflows by using expert knowledge graphs to deduce root causes.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What does 'Fine-Tuning' a model entail?",
+                "options": [
+                    "A) Adjusting the volume",
+                    "B) Training a base model further on a specific dataset to improve performance on a specific task",
+                    "C) Cleaning the screen",
+                    "D) Restarting the server"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Fine-tuning involves taking a pre-trained model and training it further on a domain-specific dataset (e.g., Cisco configs) to improve its proficiency in that area.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Can an MCP Server run locally on a developer's machine?",
+                "options": [
+                    "A) No, only in the cloud",
+                    "B) Yes, allowing the AI to access local tools and files securely",
+                    "C) Only on Linux",
+                    "D) Only on Tuesdays"
+                ],
+                "correctAnswer": "B",
+                "explanation": "MCP Servers can run locally, allowing a cloud-based or local AI model to securely interact with your local files, shell, or databases.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is the risk of 'Prompt Injection'?",
+                "options": [
+                    "A) Providing the AI with a vaccine",
+                    "B) Malicious inputs designed to trick the AI into ignoring its instructions and performing unauthorized actions",
+                    "C) Typing too fast",
+                    "D) Using a SQL database"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Prompt injection attacks attempt to override the system prompt, potentially causing the AI to leak data or perform unauthorized tasks.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "In AI-assisted network design, what is a 'Hallucination'?",
+                "options": [
+                    "A) A creative design",
+                    "B) The AI inventing a device model or feature that does not exist",
+                    "C) A cool graphic",
+                    "D) A correct answer"
+                ],
+                "correctAnswer": "B",
+                "explanation": "In design, hallucination manifests as the AI recommending non-existent hardware modules, incompatible transceivers, or imaginary IOS commands.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which allows an AI to persist information across multiple interactions?",
+                "options": [
+                    "A) Memory / Context History",
+                    "B) Hard drive",
+                    "C) RAM",
+                    "D) It cannot"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Memory mechanisms allow an AI agent to store and recall information from previous turns in the conversation, maintaining context over time.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What implies that an AI model is 'Multimodal'?",
+                "options": [
+                    "A) It runs on multiple modes of transport",
+                    "B) It can understand and process different types of input (text, images, audio)",
+                    "C) It has multiple personalities",
+                    "D) It is expensive"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Multimodal models (like GPT-4o) can accept text, images (e.g., network diagrams), and sometimes audio as input.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Role-based access control (RBAC) in AI tools helps prevent:",
+                "options": [
+                    "A) AI from learning",
+                    "B) Unauthorized users from generating configs for sensitive parts of the network",
+                    "C) Slow speeds",
+                    "D) Too many questions"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Integrating RBAC with AI tools ensures that only authorized users can prompt the AI to generate changes for critical or restricted network segments.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which utilizes 'Natural Language Processing' (NLP) to convert human requests into network intent?",
+                "options": [
+                    "A) SNMP",
+                    "B) LLM-based Chatbots / Interfaces",
+                    "C) Syslog",
+                    "D) NetFlow"
+                ],
+                "correctAnswer": "B",
+                "explanation": "NLP enables interfaces where engineers describe intent in plain English (e.g., 'Configure VLAN 10'), and the AI translates it into specific configuration commands.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is the main benefit of 'Copilot' style tools in IDEs (like VS Code)?",
+                "options": [
+                    "A) They play music",
+                    "B) They autocomplete code snippets and boilerplate, speeding up development",
+                    "C) They compile code faster",
+                    "D) They debug hardware"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI Copilots in IDEs suggest code completions, generate boilerplate, and explain complex blocks, significantly speeding up the coding process.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Predictive AI in Cisco Wireless (assurance) mainly helps with:",
+                "options": [
+                    "A) Creating SSIDs",
+                    "B) Predicting interference and optimizing RF channel planning dynamically",
+                    "C) Installing APs",
+                    "D) Billing"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI/ML in Cisco Wireless Assurance predicts interference patterns and optimizes Radio Resource Management (RRM) to improve client experience.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is a 'Token' in LLM processing?",
+                "options": [
+                    "A) A physical coin",
+                    "B) A unit of text (part of a word) that the model processes",
+                    "C) An authentication key",
+                    "D) A network ring"
+                ],
+                "correctAnswer": "B",
+                "explanation": "LLMs process text in chunks called tokens. A token is roughly 3/4 of a word (e.g., 'ing', 'the', ' automation'). Usage and limits are measured in tokens.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Why must generated code be reviewed before deployment in a production network?",
+                "options": [
+                    "A) It is required by law",
+                    "B) Because AI can produce syntactically correct but functionally disastrous code (e.g., shutting down the uplink)",
+                    "C) Ideally, it shouldn't be",
+                    "D) To add comments"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI does not 'understand' the network impact. Valid Python code could logically destroy connectivity (e.g., deleting a route), so human review is mandatory.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is 'Agentic' workflow?",
+                "options": [
+                    "A) A workflow managed by a travel agent",
+                    "B) A system where the AI acts autonomously to perceive, plan, act, and reflect to achieve a goal",
+                    "C) A rigid script",
+                    "D) A manual process"
+                ],
+                "correctAnswer": "B",
+                "explanation": "An agentic workflow involves an AI that can use tools, make decisions, observe results, and iterate to solve a complex problem with minimal human intervention.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which technology underpins most modern Generative AI models (like GPT)?",
+                "options": [
+                    "A) Transformer Architecture",
+                    "B) Spanning Tree Protocol",
+                    "C) OSPF",
+                    "D) Relational Databases"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The Transformer architecture (introduced by Google in 2017) is the foundation of modern Large Language Models like GPT, BERT, and Claude.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is 'Data Poisoning' in AI security?",
+                "options": [
+                    "A) Deleting data",
+                    "B) Injecting bad data into the training set to compromise the model's behavior",
+                    "C) Encrypting data",
+                    "D) Corrupting the hard drive"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Data poisoning attacks involve corrupting the training data so that the resulting model learns incorrect behaviors or hidden backdoors.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Does Cisco Catalyst Center use AI to optimize Wi-Fi roaming?",
+                "options": [
+                    "A) Yes, via AI-Enhanced RRM",
+                    "B) No, it is manual",
+                    "C) Only on wired networks",
+                    "D) Only for 2.4GHz"
+                ],
+                "correctAnswer": "A",
+                "explanation": "Cisco AI-Enhanced RRM uses cloud-based AI analysis of long-term RF trends to make smarter channel and power decisions than local-only RRM.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is the purpose of a 'System Message' in an API call to an LLM?",
+                "options": [
+                    "A) To report errors",
+                    "B) To set the behavior, persona, and constraints of the assistant",
+                    "C) To send the user query",
+                    "D) To close the connection"
+                ],
+                "correctAnswer": "B",
+                "explanation": "The System Message (or System Prompt) initializes the chat session, defining how the AI should behave (e.g., 'You coincide python code only').",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "In the context of 'AI in Automation', what implies 'Determinism'?",
+                "options": [
+                    "A) The output is always different",
+                    "B) The same input always produces the same output (crucial for network config)",
+                    "C) The AI guesses",
+                    "D) The network is random"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Determinism ensures stability; running the same automation script or prompt should yield the exact same configuration every time.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is 'Bias' in AI models?",
+                "options": [
+                    "A) A voltage offset",
+                    "B) Skewed results based on imbalances in the training data",
+                    "C) A preference for Cisco",
+                    "D) A routing metric"
+                ],
+                "correctAnswer": "B",
+                "explanation": "If an AI is trained mostly on one vendor's config or one type of architecture, it may be biased towards those solutions even when inappropriate.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "Which Python library is commonly used to interface with OpenAI-compatible APIs?",
+                "options": [
+                    "A) openai",
+                    "B) netmiko",
+                    "C) paramiko",
+                    "D) napalm"
+                ],
+                "correctAnswer": "A",
+                "explanation": "The `openai` Python library is the standard client for interacting with OpenAI's API and many compatible open-source model providers.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "How can AI help with 'Event Correlation'?",
+                "options": [
+                    "A) Usually it cannot",
+                    "B) By grouping related logs and alerts from different devices into a single root-cause incident",
+                    "C) By deleting logs",
+                    "D) By generating more logs"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AI correlates scattered events (syslogs, traps) across the network to identify that they all stem from a single root cause (e.g., a link flap).",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is the 'Temperature' setting if you want the most deterministic, code-safe output from an LLM?",
+                "options": [
+                    "A) 1.0",
+                    "B) 0.0 (or very close to 0)",
+                    "C) 0.5",
+                    "D) 2.0"
+                ],
+                "correctAnswer": "B",
+                "explanation": "Setting temperature to 0 minimizes randomness, forcing the model to select the most likely next token, which is ideal for code generation and factual tasks.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "To securely use an API Key in a Python script for AI tools, where should it be stored?",
+                "options": [
+                    "A) Hardcoded in the script",
+                    "B) In an Environment Variable or Secrets Manager",
+                    "C) In a text file on the desktop",
+                    "D) In the git commit message"
+                ],
+                "correctAnswer": "B",
+                "explanation": "API keys should never be hardcoded. Storing them in environment variables or a secrets manager keeps them secure and out of version control systems.",
+                "section": "AI in Automation"
+            },
+            {
+                "text": "What is the main goal of 'AIOps'?",
+                "options": [
+                    "A) To replace all humans",
+                    "B) To enhance IT operations using Artificial Intelligence (automation, monitoring, resolution)",
+                    "C) To make cool charts",
+                    "D) To increase budget"
+                ],
+                "correctAnswer": "B",
+                "explanation": "AIOps (Artificial Intelligence for IT Operations) aims to automate and enhance operational workflows, shifting from reactive to proactive management.",
+                "section": "AI in Automation"
+            }
+        ]
+    }
+]

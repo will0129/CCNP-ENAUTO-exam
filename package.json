@@ -1,0 +1,8 @@
+{
+    "name": "ccnp-study-game",
+    "version": "1.0.0",
+    "description": "CCNP ENCOR Study Game",
+    "scripts": {
+        "build": "echo 'No build step required'"
+    }
+}

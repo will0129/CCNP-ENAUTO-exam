@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Interactive Cisco ENAUTO (300-435) exam study game with immediate feedback and score tracking">
+    <meta name="keywords" content="Cisco, ENAUTO, 300-435, automation, python, devnet, study, exam preparation">
+    <title>Cisco ENAUTO Study Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div id="loading-screen" class="screen active">
+            <div class="loading-content">
+                <div class="loader"></div>
+                <h2>Loading Questions...</h2>
+            </div>
+        </div>
+
+        <div id="section-select-screen" class="screen">
+            <div class="container">
+                <header class="app-header">
+                    <h1 class="app-title">🎓 Cisco ENAUTO Study Game</h1>
+                    <p class="app-subtitle">Master your network automation knowledge</p>
+                </header>
+
+                <div class="score-card" id="overall-score-card" style="display: none;">
+                    <div class="score-content">
+                        <div class="score-label">Overall Progress</div>
+                        <div class="score-value" id="overall-score-display">0/0</div>
+                        <div class="score-percentage" id="overall-percentage-display">0%</div>
+                    </div>
+                    <button id="reset-score-btn" class="btn-reset" title="Reset all progress">
+                        <span>🔄 Reset Score</span>
+                    </button>
+                </div>
+
+                <div class="section-selector-card">
+                    <h2>Select Study Sections</h2>
+                    <p class="helper-text">Choose one or more sections to study</p>
+
+                    <div id="section-list" class="section-list">
+                        <!-- Sections will be dynamically inserted here -->
+                    </div>
+
+                    <div class="start-buttons">
+                        <button id="start-round-btn" class="btn-primary" disabled>
+                            Start Round (10 Questions)
+                        </button>
+                        <button id="start-all-btn" class="btn-primary" disabled
+                            style="background: var(--secondary-gradient, #4a90e2)">
+                            Start All Questions
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameplay-screen" class="screen">
+            <div class="container">
+                <div class="gameplay-header">
+                    <button id="exit-round-btn" class="btn-secondary">← Exit Round</button>
+                    <div class="score-display-small" id="game-score-display">0/0 (0%)</div>
+                </div>
+
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div class="question-info">
+                    <div class="question-counter" id="question-counter">Question 1 of 10</div>
+                    <div class="section-badge" id="current-section-badge">Section Name</div>
+                </div>
+
+                <div class="question-card">
+                    <h3 class="question-text" id="question-text">Question text will appear here</h3>
+                    <div class="options-list" id="options-list">
+                        <!-- Options will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="feedback-screen" class="screen">
+            <div class="container">
+                <div class="feedback-overlay">
+                    <div id="feedback-content" class="feedback-content">
+                        <!-- Feedback will be dynamically inserted here -->
+                    </div>
+                    <button id="next-question-btn" class="btn-primary">Next Question →</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="round-complete-screen" class="screen">
+            <div class="container">
+                <div class="completion-card">
+                    <div class="celebration-icon">🎉</div>
+                    <h2 class="completion-title">Round Complete!</h2>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">This Round</div>
+                            <div class="stat-value" id="round-score">0/10</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Overall Score</div>
+                            <div class="stat-value" id="final-overall-score">0/0</div>
+                        </div>
+                        <div class="stat-card wide">
+                            <div class="stat-label">Success Rate</div>
+                            <div class="stat-value" id="final-percentage">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="continue-studying-btn" class="btn-primary">Continue Studying</button>
+                        <button id="same-sections-btn" class="btn-secondary">Same Sections Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer">
+            Created by William Nellis @ Cisco
+        </footer>
+    </div>
+
+    <!-- Utilities -->
+    <script src="utils/questionsData.js?v=1.3"></script>
+    <script src="utils/questionParser.js?v=1.3"></script>
+    <script src="utils/scoreManager.js?v=1.3"></script>
+    <script src="utils/randomSelector.js?v=1.3"></script>
+    <script src="app.js?v=1.3"></script>
+</body>
+
+</html>
